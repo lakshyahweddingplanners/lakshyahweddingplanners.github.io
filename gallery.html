@@ -1,0 +1,2147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gallery – Lakshyah Wedding Planners. Browse our stunning portfolio of weddings, receptions, catering, decor and more.">
+<title>Gallery | Lakshyah Wedding Planners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bronze: #B86B45;
+  --bronze-light: #D08A5C;
+  --bronze-dark: #7A3E26;
+  --black: #0A0A0A;
+  --black-soft: #111111;
+  --black-card: #141414;
+  --white: #FAFAFA;
+  --off-white: #F5F0E8;
+  --gray-mid: #8A7F73;
+  --gray-light: #E8E4DC;
+  --transition: all 0.4s ease;
+  --transition-fast: all 0.25s ease;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Jost', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--bronze-dark); border-radius: 2px; }
+::selection { background: var(--bronze); color: var(--black); }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+.script { font-family: 'Great Vibes', cursive; }
+
+.bronze-text {
+  background: linear-gradient(135deg, #8C4A1E, #CD7F32, #E0A96D, #CD7F32, #8C4A1E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ─── NAVBAR ─── */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1.2rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: var(--transition);
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(205,127,50,0.12);
+}
+#navbar.scrolled {
+  background: rgba(10,10,10,0.97);
+  padding: .6em 4rem;
+  border-bottom: 1px solid rgba(205,127,50,0.2);
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo img { height: 70px; width: auto; object-fit: contain; transition: height 0.3s; }
+#navbar.scrolled .nav-logo img { height: 55px; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'Jost', sans-serif;
+  font-size: 12px; font-weight: 300;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(250,250,250,0.75);
+  text-decoration: none; transition: var(--transition-fast);
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--bronze); transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover { color: var(--bronze-light); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--bronze-light); }
+.nav-cta {
+  background: transparent; border: 1px solid var(--bronze);
+  color: var(--bronze) !important; padding: 0.5rem 1.5rem !important;
+  letter-spacing: 2px !important;
+}
+.nav-cta:hover { background: var(--bronze) !important; color: var(--black) !important; }
+.nav-cta::after { display: none !important; }
+
+.hamburger {
+  display: none; flex-direction: column; justify-content: center;
+  align-items: center; gap: 0; cursor: pointer; background: none;
+  border: 1px solid rgba(205,127,50,0.3); border-radius: 4px;
+  width: 44px; height: 44px; padding: 0; position: relative;
+  transition: border-color 0.3s ease;
+}
+.hamburger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--bronze-light); border-radius: 2px;
+  position: absolute; transition: all 0.35s cubic-bezier(0.23,1,0.32,1);
+}
+.hamburger span:nth-child(1) { top: 14px; }
+.hamburger span:nth-child(2) { top: 21px; width: 14px; }
+.hamburger span:nth-child(3) { top: 28px; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 21px; }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 21px; }
+
+.mobile-menu {
+  display: none; opacity: 0;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(10,10,10,0.98); backdrop-filter: blur(20px);
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.5rem; z-index: 1001; transition: opacity 0.4s ease;
+}
+.mobile-menu.open { display: flex; opacity: 1; }
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300;
+  color: rgba(250,250,250,0.7); text-decoration: none;
+  letter-spacing: 3px; padding: 0.6rem 2rem;
+  transition: all 0.3s ease; display: block; text-align: center;
+}
+.mobile-menu a:hover { color: var(--bronze-light); }
+.mobile-menu-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  background: none; border: 1px solid rgba(205,127,50,0.4);
+  color: var(--bronze-light); font-size: 1.5rem;
+  width: 44px; height: 44px; cursor: pointer; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ─── REVEAL ─── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── GOLD DIVIDER ─── */
+.gold-divider { display: flex; align-items: center; gap: 1rem; margin: 1rem auto; }
+.gold-divider::before, .gold-divider::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--bronze), transparent); }
+.gold-divider span { color: var(--bronze); font-size: 18px; }
+
+/* ─── HERO ─── */
+.gallery-hero {
+  position: relative; min-height: 80vh;
+  display: flex; align-items: flex-end;
+  padding: 0 4rem 6rem; overflow: hidden;
+}
+.gallery-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 70%, rgba(205,127,50,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(205,127,50,0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #050505 0%, #0f0e0c 60%, #050505 100%);
+}
+.gallery-hero-grid {
+  position: absolute; inset: 0; opacity: 0.025;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.8) 59px, rgba(201,168,76,0.8) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.8) 59px, rgba(201,168,76,0.8) 60px);
+}
+.hero-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.07);
+  animation: pulse-ring 5s ease-in-out infinite;
+}
+@keyframes pulse-ring {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(1.04); }
+}
+.gallery-hero-content {
+  position: relative; z-index: 2;
+  max-width: 1300px; margin: 0 auto; width: 100%;
+  padding-top: 12rem;
+}
+.gallery-hero-label {
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300;
+  letter-spacing: 6px; text-transform: uppercase; color: var(--bronze);
+  margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+.gallery-hero-label::before { content: ''; display: block; width: 40px; height: 1px; background: var(--bronze); }
+.gallery-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 300; line-height: 1.0; color: var(--white);
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+.gallery-hero-title em { font-style: italic; color: var(--bronze-light); display: block; }
+.gallery-hero-sub {
+  margin-top: 2rem; max-width: 520px;
+  font-size: 0.95rem; line-height: 1.9;
+  color: rgba(250,250,250,0.55); font-weight: 300;
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+.gallery-hero-script {
+  position: absolute; right: 4rem; bottom: 5rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(5rem, 12vw, 12rem);
+  color: rgba(201,168,76,0.05); line-height: 1;
+  pointer-events: none; white-space: nowrap;
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+
+/* ─── STATS STRIP ─── */
+.gallery-stats {
+  background: var(--black-card);
+  border-top: 1px solid rgba(205,127,50,0.15);
+  border-bottom: 1px solid rgba(205,127,50,0.15);
+  padding: 2.5rem 4rem;
+}
+.gallery-stats-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  text-align: center; gap: 1rem;
+}
+.gstat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 300; color: var(--bronze-light);
+  line-height: 1;
+}
+.gstat-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gray-mid); font-weight: 300; margin-top: 0.5rem;
+}
+
+/* ─── FILTER TABS ─── */
+.gallery-filter {
+  padding: 4rem 4rem 2rem;
+  background: var(--black);
+  position: sticky; top: 78px; z-index: 100;
+  border-bottom: 1px solid rgba(205,127,50,0.08);
+  backdrop-filter: blur(10px);
+}
+.gallery-filter-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: flex; align-items: center; gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gray-mid); font-weight: 300; margin-right: 0.5rem;
+}
+.filter-btn {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px; font-weight: 300;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid rgba(205,127,50,0.25);
+  color: rgba(250,250,250,0.5);
+  background: none; cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+.filter-btn:hover { border-color: var(--bronze); color: var(--bronze-light); }
+.filter-btn.active {
+  background: linear-gradient(135deg, #8C4A1E, #CD7F32);
+  border-color: transparent; color: var(--black); font-weight: 500;
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 0.5rem;
+}
+.section-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.1; color: var(--white); }
+.section-title em { font-style: italic; color: var(--bronze-light); }
+
+/* ─── GALLERY SECTIONS ─── */
+.gallery-section {
+  padding: 6rem 4rem;
+  max-width: 1300px; margin: 0 auto;
+}
+.gallery-section-header { text-align: center; margin-bottom: 3.5rem; }
+.gallery-section-sub {
+  font-size: 0.9rem; color: var(--gray-mid); font-weight: 300;
+  max-width: 500px; margin: 1rem auto 0; line-height: 1.8;
+}
+
+/* ─── MASONRY GRID ─── */
+.masonry-grid {
+  columns: 3; column-gap: 1.5rem;
+}
+.masonry-item {
+  break-inside: avoid; margin-bottom: 1.5rem;
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(205,127,50,0.1);
+  transition: border-color 0.3s ease, transform 0.4s ease;
+}
+.masonry-item:hover { border-color: rgba(205,127,50,0.4); transform: translateY(-4px); }
+.masonry-item-img {
+  width: 100%; display: block;
+  aspect-ratio: var(--ar, 1);
+  background: var(--black-card);
+  position: relative; overflow: hidden;
+}
+.masonry-item-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.4s ease;
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 1.5rem;
+}
+.masonry-item:hover .masonry-item-overlay { opacity: 1; }
+.masonry-item-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; color: var(--white); font-weight: 300;
+}
+.masonry-item-cat {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bronze); font-weight: 300; margin-bottom: 0.35rem;
+}
+
+/* Photo placeholder visual — will be replaced when real photos are added */
+.photo-placeholder {
+  width: 100%; background: var(--black-card);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; position: relative; overflow: hidden;
+  min-height: 200px;
+}
+.photo-placeholder::before {
+  content: '';
+  position: absolute; inset: 0;
+}
+.photo-placeholder svg { opacity: 0.15; position: relative; z-index: 1; }
+.photo-placeholder-label {
+  position: relative; z-index: 1;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem; color: rgba(205,127,50,0.35);
+  margin-top: 0.5rem;
+}
+
+/* ─── FULL-WIDTH FEATURE ROW ─── */
+.feature-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-bottom: 1.5rem;
+}
+.feature-row.reverse { direction: rtl; }
+.feature-row.reverse > * { direction: ltr; }
+.feature-cell {
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(205,127,50,0.1);
+  transition: border-color 0.3s, transform 0.4s;
+}
+.feature-cell:hover { border-color: rgba(205,127,50,0.4); transform: translateY(-4px); }
+.feature-cell.tall { grid-row: span 2; }
+.feature-cell-img {
+  width: 100%; display: block;
+  background: var(--black-card);
+}
+.feature-cell-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(5,5,5,0.9) 0%, transparent 55%);
+  opacity: 0; transition: opacity 0.4s;
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 2rem;
+}
+.feature-cell:hover .feature-cell-overlay { opacity: 1; }
+.feature-cell-overlay h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 300; color: var(--white);
+}
+.feature-cell-overlay span {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bronze); margin-bottom: 0.5rem; display: block;
+}
+
+/* ─── 3-COL GRID ─── */
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.2rem; }
+.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+
+.gallery-card {
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(205,127,50,0.1);
+  transition: all 0.4s ease;
+}
+.gallery-card:hover { border-color: rgba(205,127,50,0.45); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.gallery-card-img {
+  width: 100%; display: block;
+  background: var(--black-card);
+  overflow: hidden; position: relative;
+}
+.gallery-card-img .inner {
+  width: 100%; transition: transform 0.5s ease;
+}
+.gallery-card:hover .gallery-card-img .inner { transform: scale(1.05); }
+.gallery-card-info {
+  padding: 1.2rem 1.5rem;
+  background: var(--black-card);
+  border-top: 1px solid rgba(205,127,50,0.08);
+}
+.gallery-card-info h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 300; color: var(--white);
+  margin-bottom: 0.25rem;
+}
+.gallery-card-info p {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--bronze); font-weight: 300;
+}
+
+/* ─── DIVIDER SECTION ─── */
+.gallery-divider-section {
+  padding: 5rem 4rem; text-align: center;
+  background: var(--black-card);
+  border-top: 1px solid rgba(205,127,50,0.1);
+  border-bottom: 1px solid rgba(205,127,50,0.1);
+}
+.gallery-divider-section .script-large {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--bronze-light); display: block; margin-bottom: 1rem;
+}
+.gallery-divider-section p {
+  font-size: 0.95rem; color: var(--gray-mid); font-weight: 300;
+  line-height: 1.9; max-width: 600px; margin: 0 auto;
+}
+
+/* ─── LIGHTBOX ─── */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(5,5,5,0.97); backdrop-filter: blur(20px);
+  display: none; align-items: center; justify-content: center;
+}
+.lightbox.open { display: flex; }
+.lightbox-content {
+  max-width: 90vw; max-height: 90vh;
+  position: relative; display: flex; flex-direction: column; align-items: center;
+}
+.lightbox-img {
+  max-width: 100%; max-height: 80vh;
+  object-fit: contain; border: 1px solid rgba(205,127,50,0.2);
+}
+.lightbox-mock {
+  max-width: 700px; width: 80vw; max-height: 70vh;
+  background: var(--black-card);
+  border: 1px solid rgba(205,127,50,0.25);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 1rem; padding: 3rem;
+}
+.lightbox-info {
+  margin-top: 1.5rem; text-align: center;
+}
+.lightbox-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 300; color: var(--white);
+}
+.lightbox-info p { font-size: 11px; letter-spacing: 2px; color: var(--bronze); text-transform: uppercase; margin-top: 0.25rem; }
+.lightbox-close {
+  position: absolute; top: -3rem; right: 0;
+  background: none; border: 1px solid rgba(205,127,50,0.4);
+  color: var(--bronze-light); font-size: 1.2rem;
+  width: 40px; height: 40px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.lightbox-close:hover { background: var(--bronze); color: var(--black); }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: none; border: 1px solid rgba(205,127,50,0.3);
+  color: var(--bronze-light); font-size: 1.2rem;
+  width: 44px; height: 44px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+}
+.lightbox-nav:hover { background: rgba(205,127,50,0.2); }
+.lightbox-prev { left: -4rem; }
+.lightbox-next { right: -4rem; }
+
+/* ─── BEFORE/AFTER ─── */
+.ba-section { padding: 6rem 4rem; background: var(--black-soft); }
+.ba-inner { max-width: 1300px; margin: 0 auto; }
+.ba-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 3rem; }
+.ba-card { border: 1px solid rgba(205,127,50,0.12); overflow: hidden; }
+.ba-top { display: grid; grid-template-columns: 1fr 1fr; }
+.ba-half {
+  padding: 2rem 1.5rem;
+  background: var(--black-card); text-align: center;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; min-height: 200px;
+}
+.ba-half.after { background: rgba(205,127,50,0.05); border-left: 1px solid rgba(205,127,50,0.15); }
+.ba-label {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  font-weight: 300; padding: 0.3rem 0.8rem;
+  border: 1px solid; display: inline-block;
+}
+.ba-label.before { color: var(--gray-mid); border-color: rgba(138,127,115,0.4); }
+.ba-label.after { color: var(--bronze); border-color: rgba(205,127,50,0.4); }
+.ba-bottom { padding: 1.25rem 1.5rem; background: var(--black-card); border-top: 1px solid rgba(205,127,50,0.08); }
+.ba-bottom h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; }
+.ba-bottom p { font-size: 0.8rem; color: var(--gray-mid); margin-top: 0.25rem; }
+
+/* ─── VIDEO STRIP ─── */
+.video-strip { padding: 6rem 4rem; background: var(--black); }
+.video-strip-inner { max-width: 1300px; margin: 0 auto; }
+.video-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+.video-card {
+  position: relative; overflow: hidden; cursor: pointer;
+  border: 1px solid rgba(205,127,50,0.1);
+  transition: all 0.4s;
+}
+.video-card:hover { border-color: rgba(205,127,50,0.4); }
+.video-card-img { width: 100%; background: var(--black-card); }
+.video-play-btn {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(205,127,50,0.85);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s; pointer-events: none;
+}
+.video-card:hover .video-play-btn { background: var(--bronze); transform: translate(-50%,-50%) scale(1.1); }
+.video-play-btn svg { width: 20px; height: 20px; fill: var(--black); margin-left: 3px; }
+.video-card-info { padding: 1rem 1.25rem; background: var(--black-card); }
+.video-card-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 300; }
+.video-card-info p { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--bronze); margin-top: 0.2rem; }
+
+/* ─── CTA BAND ─── */
+.gallery-cta {
+  padding: 8rem 4rem; text-align: center;
+  background: linear-gradient(135deg, rgba(140,74,30,0.1) 0%, rgba(10,10,10,0) 50%, rgba(140,74,30,0.08) 100%);
+  border-top: 1px solid rgba(205,127,50,0.15);
+}
+.gallery-cta .script { font-size: clamp(3rem, 6vw, 5rem); color: var(--bronze-light); display: block; margin-bottom: 1rem; }
+.gallery-cta h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--white); margin-bottom: 0.75rem; }
+.gallery-cta h2 em { font-style: italic; color: var(--bronze-light); }
+.gallery-cta p { font-size: 0.95rem; color: var(--gray-mid); max-width: 500px; margin: 0 auto 3rem; line-height: 1.8; }
+.cta-btns { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #8C4A1E, #CD7F32);
+  color: var(--black); font-family: 'Jost', sans-serif;
+  font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition);
+  position: relative; overflow: hidden; cursor: pointer; border: none;
+}
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--bronze-light); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease; z-index: 0;
+}
+.btn-primary:hover::before { transform: scaleX(1); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-outline {
+  display: inline-block; padding: 1rem 2.5rem;
+  border: 1px solid rgba(201,168,76,0.5);
+  color: var(--bronze-light); font-family: 'Jost', sans-serif;
+  font-size: 11px; font-weight: 300; letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition-fast); cursor: pointer; background: none;
+}
+.btn-outline:hover { border-color: var(--bronze); background: rgba(201,168,76,0.08); color: var(--bronze); }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #050505;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  padding: 5rem 4rem 2rem;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(201,168,76,0.08); }
+.footer-brand-script { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--bronze-light); display: block; margin-bottom: 1rem; }
+.footer-tagline { font-size: 0.8rem; color: var(--gray-mid); line-height: 1.7; font-weight: 300; max-width: 260px; }
+.footer-col h4 { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 1.5rem; font-family: 'Jost', sans-serif; font-weight: 300; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.75rem; }
+.footer-col ul li a { font-size: 0.85rem; color: rgba(250,250,250,0.5); text-decoration: none; font-weight: 300; transition: color 0.3s; }
+.footer-col ul li a:hover { color: var(--bronze-light); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; font-size: 11px; color: rgba(250,250,250,0.25); font-weight: 300; letter-spacing: 1px; }
+.footer-bottom a { color: var(--bronze-light); text-decoration: none; }
+
+.float-whatsapp {
+  position: fixed; bottom: 2rem; right: 1.5rem;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: #25D366; display: flex; align-items: center; justify-content: center;
+  z-index: 900; box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.float-whatsapp:hover { transform: scale(1.1); }
+.float-whatsapp svg { width: 26px; height: 26px; fill: white; }
+
+.scroll-top {
+  position: fixed; bottom: 6rem; right: 1.75rem;
+  width: 40px; height: 40px;
+  background: rgba(10,10,10,0.9);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--bronze); font-size: 12px;
+  cursor: pointer; z-index: 900; display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.scroll-top.visible { opacity: 1; }
+
+/* ─── GALLERY CATEGORY HEADINGS ─── */
+.cat-heading {
+  display: flex; align-items: center; gap: 2rem;
+  margin-bottom: 3rem; padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(205,127,50,0.12);
+}
+.cat-heading-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4rem; font-weight: 300;
+  color: rgba(205,127,50,0.15); line-height: 1;
+}
+.cat-heading-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: var(--white);
+}
+.cat-heading-text h2 em { font-style: italic; color: var(--bronze-light); }
+.cat-heading-text p { font-size: 0.85rem; color: var(--gray-mid); font-weight: 300; margin-top: 0.4rem; }
+
+/* gallery-section wrapper for full-width bg */
+.gallery-section-wrapper {
+  background: var(--black);
+}
+.gallery-section-wrapper.alt { background: var(--black-soft); }
+
+/* ─── HIDDEN CATEGORY FILTER LOGIC ─── */
+.gallery-item[data-cat] { transition: opacity 0.3s, transform 0.3s; }
+.gallery-item.hidden { opacity: 0; pointer-events: none; height: 0; overflow: hidden; margin: 0; padding: 0; transform: scale(0.9); }
+
+/* photo svg art */
+.photo-art {
+  width: 100%; display: block;
+  aspect-ratio: var(--ar, 4/3);
+  background: var(--black-card);
+  position: relative; overflow: hidden;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .masonry-grid { columns: 2; }
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .video-grid { grid-template-columns: 1fr 1fr; }
+  .video-grid .video-card:first-child { grid-column: span 2; }
+  .ba-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+}
+@media (max-width: 768px) {
+  #navbar { padding: 1rem 1.5rem; }
+  #navbar.scrolled { padding: 0.7rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .gallery-hero { padding: 0 2rem 4rem; min-height: 70vh; }
+  .gallery-hero-script { display: none; }
+  .gallery-stats { padding: 2rem 1.5rem; }
+  .gallery-stats-inner { grid-template-columns: repeat(2,1fr); }
+  .gallery-filter { padding: 2rem 1.5rem 1.5rem; top: 68px; }
+  .gallery-section { padding: 4rem 1.5rem; }
+  .masonry-grid { columns: 1; }
+  .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; }
+  .feature-row { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: 1fr; }
+  .video-grid { grid-template-columns: 1fr; }
+  .video-grid .video-card:first-child { grid-column: span 1; }
+  .gallery-divider-section { padding: 4rem 1.5rem; }
+  .gallery-cta { padding: 5rem 1.5rem; }
+  .lightbox-prev { left: -0.5rem; }
+  .lightbox-next { right: -0.5rem; }
+  footer { padding: 4rem 1.5rem 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.75rem; text-align: center; }
+  .ba-section, .video-strip { padding: 4rem 1.5rem; }
+}
+@media (max-width: 480px) {
+  .gallery-stats-inner { grid-template-columns: 1fr 1fr; }
+  .filter-btn { font-size: 10px; padding: 0.5rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Lakshyah Wedding Planners">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="packages.html">Packages</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── MOBILE MENU ─── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" onclick="closeMobileMenu()">&times;</button>
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="about.html" onclick="closeMobileMenu()">About</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMobileMenu()">Gallery</a>
+  <a href="packages.html" onclick="closeMobileMenu()">Packages</a>
+  <a href="testimonials.html" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="booking.html" onclick="closeMobileMenu()" style="margin-top:1.5rem;padding:0.9rem 2.2rem;border:1px solid var(--bronze);color:var(--bronze);letter-spacing:2px;text-transform:uppercase;font-size:12px;text-decoration:none;display:inline-block;">Book Now</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="gallery-hero">
+  <div class="gallery-hero-bg"></div>
+  <div class="gallery-hero-grid"></div>
+  <div class="hero-ring" style="width:700px;height:700px;top:-200px;right:-200px;"></div>
+  <div class="hero-ring" style="width:450px;height:450px;top:-100px;right:-100px;animation-delay:1.5s;"></div>
+  <div class="hero-ring" style="width:250px;height:250px;top:0;right:0;animation-delay:3s;"></div>
+
+  <div class="gallery-hero-content">
+    <div class="gallery-hero-label">Our Portfolio</div>
+    <h1 class="gallery-hero-title">
+      Moments <em>Immortalized</em>
+    </h1>
+    <p class="gallery-hero-sub">
+      Every frame tells a love story. Browse through hundreds of weddings, ceremonies, decor concepts, and celebrations crafted by Lakshyah across Kerala and beyond.
+    </p>
+  </div>
+  <span class="gallery-hero-script">Gallery</span>
+</section>
+
+<!-- ─── STATS ─── -->
+<div class="gallery-stats reveal">
+  <div class="gallery-stats-inner">
+    <div><div class="gstat-num bronze-text">500+</div><div class="gstat-label">Weddings Captured</div></div>
+    <div><div class="gstat-num bronze-text">12K+</div><div class="gstat-label">Photos Curated</div></div>
+    <div><div class="gstat-num bronze-text">8</div><div class="gstat-label">Event Categories</div></div>
+    <div><div class="gstat-num bronze-text">10</div><div class="gstat-label">Years of Memories</div></div>
+  </div>
+</div>
+
+<!-- ─── FILTER TABS ─── -->
+<div class="gallery-filter">
+  <div class="gallery-filter-inner">
+    <span class="filter-label">Filter by</span>
+    <button class="filter-btn active" data-filter="all" onclick="filterGallery(this,'all')">All</button>
+    <button class="filter-btn" data-filter="wedding" onclick="filterGallery(this,'wedding')">Weddings</button>
+    <button class="filter-btn" data-filter="reception" onclick="filterGallery(this,'reception')">Reception</button>
+    <button class="filter-btn" data-filter="engagement" onclick="filterGallery(this,'engagement')">Engagement</button>
+    <button class="filter-btn" data-filter="decor" onclick="filterGallery(this,'decor')">Decor</button>
+    <button class="filter-btn" data-filter="catering" onclick="filterGallery(this,'catering')">Catering</button>
+    <button class="filter-btn" data-filter="mehendi" onclick="filterGallery(this,'mehendi')">Mehendi</button>
+    <button class="filter-btn" data-filter="venue" onclick="filterGallery(this,'venue')">Venues</button>
+    <button class="filter-btn" data-filter="candid" onclick="filterGallery(this,'candid')">Candid</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 1 – FEATURED WEDDINGS
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">01</div>
+    <div class="cat-heading-text">
+      <h2>Featured <em>Weddings</em></h2>
+      <p>Grand celebrations that define the Lakshyah legacy</p>
+    </div>
+  </div>
+
+  <!-- Feature row: large + tall side -->
+  <div class="feature-row reveal gallery-item" data-cat="wedding">
+    <div class="feature-cell" onclick="openLightbox('Priya & Arjun Wedding','Grand Kerala Wedding')">
+      <div class="photo-art" style="--ar:16/9">
+        <svg width="100%" height="100%" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <defs>
+            <radialGradient id="wg1" cx="50%" cy="40%" r="70%">
+              <stop offset="0%" stop-color="#CD7F32" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="450" fill="#141414"/>
+          <rect width="800" height="450" fill="url(#wg1)"/>
+          <!-- Arch silhouette -->
+          <path d="M320 420 L320 200 Q320 80 400 80 Q480 80 480 200 L480 420Z" stroke="#CD7F32" stroke-width="1.5" fill="none" opacity="0.3"/>
+          <path d="M330 420 L330 210 Q330 100 400 100 Q470 100 470 210 L470 420Z" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.04)" opacity="0.5"/>
+          <!-- Flower clusters -->
+          <circle cx="320" cy="200" r="25" fill="none" stroke="#CD7F32" stroke-width="0.75" opacity="0.25"/>
+          <circle cx="480" cy="200" r="25" fill="none" stroke="#CD7F32" stroke-width="0.75" opacity="0.25"/>
+          <!-- Couple silhouette -->
+          <ellipse cx="385" cy="360" rx="18" ry="50" fill="rgba(205,127,50,0.15)"/>
+          <ellipse cx="415" cy="360" rx="18" ry="50" fill="rgba(205,127,50,0.15)"/>
+          <circle cx="385" cy="295" r="14" fill="rgba(205,127,50,0.2)"/>
+          <circle cx="415" cy="295" r="14" fill="rgba(205,127,50,0.2)"/>
+          <!-- Decoration dots -->
+          <g opacity="0.2">
+            <circle cx="200" cy="150" r="2" fill="#CD7F32"/>
+            <circle cx="600" cy="120" r="2" fill="#CD7F32"/>
+            <circle cx="150" cy="300" r="1.5" fill="#CD7F32"/>
+            <circle cx="650" cy="250" r="1.5" fill="#CD7F32"/>
+            <circle cx="100" cy="200" r="1" fill="#CD7F32"/>
+            <circle cx="700" cy="180" r="1" fill="#CD7F32"/>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-cell-overlay">
+        <span>Grand Wedding — Thrissur</span>
+        <h3>Priya & Arjun</h3>
+      </div>
+    </div>
+    <div class="feature-cell" onclick="openLightbox('Meera & Rahul Wedding','Traditional Kerala Wedding')">
+      <div class="photo-art" style="--ar:16/9">
+        <svg width="100%" height="100%" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <defs>
+            <radialGradient id="wg2" cx="30%" cy="60%" r="70%">
+              <stop offset="0%" stop-color="#E0A96D" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="450" fill="#141414"/>
+          <rect width="800" height="450" fill="url(#wg2)"/>
+          <!-- Temple pillars -->
+          <rect x="120" y="80" width="30" height="370" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <rect x="660" y="80" width="30" height="370" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <!-- Floral mandap -->
+          <path d="M250 100 L550 100 L570 420 L230 420Z" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <!-- Lamp -->
+          <path d="M380 300 L420 300 L410 370 L390 370Z" fill="rgba(205,127,50,0.15)"/>
+          <path d="M370 300 Q400 260 430 300" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.5"/>
+          <!-- Flower garlands -->
+          <path d="M250 100 Q400 140 550 100" stroke="#CD7F32" stroke-width="1.5" fill="none" opacity="0.4" stroke-dasharray="6 4"/>
+        </svg>
+      </div>
+      <div class="feature-cell-overlay">
+        <span>Traditional — Palakkad</span>
+        <h3>Meera & Rahul</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-col smaller row -->
+  <div class="grid-3 reveal">
+    <div class="gallery-card gallery-item" data-cat="wedding" onclick="openLightbox('Divya & Siddharth Wedding','Destination Wedding — Munnar')">
+      <div class="gallery-card-img">
+        <div class="inner photo-art" style="--ar:4/3">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+            <rect width="400" height="300" fill="#141414"/>
+            <circle cx="200" cy="80" r="60" fill="none" stroke="#CD7F32" stroke-width="1" opacity="0.25"/>
+            <path d="M130 280 Q200 200 270 280" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75"/>
+            <path d="M160 220 L200 150 L240 220" stroke="#CD7F32" stroke-width="0.75" fill="none" opacity="0.4"/>
+            <circle cx="200" cy="140" r="15" fill="rgba(205,127,50,0.2)"/>
+            <circle cx="180" cy="155" r="12" fill="rgba(205,127,50,0.15)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="gallery-card-info"><h4>Divya & Siddharth</h4><p>Destination · Munnar</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="wedding" onclick="openLightbox('Anjali & Vikram Wedding','Royal Wedding')">
+      <div class="gallery-card-img">
+        <div class="inner photo-art" style="--ar:4/3">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+            <rect width="400" height="300" fill="#141414"/>
+            <rect x="100" y="60" width="200" height="220" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+            <path d="M100 60 Q200 10 300 60" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.4"/>
+            <rect x="120" y="80" width="60" height="200" fill="rgba(205,127,50,0.06)" opacity="0.5"/>
+            <rect x="220" y="80" width="60" height="200" fill="rgba(205,127,50,0.06)" opacity="0.5"/>
+            <ellipse cx="200" cy="200" rx="30" ry="60" fill="rgba(205,127,50,0.12)"/>
+            <circle cx="200" cy="130" r="12" fill="rgba(205,127,50,0.2)"/>
+          </svg>
+        </div>
+      </div>
+      <div class="gallery-card-info"><h4>Anjali & Vikram</h4><p>Royal · Kochi</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="wedding" onclick="openLightbox('Sneha & Karthik Wedding','Beachside Wedding')">
+      <div class="gallery-card-img">
+        <div class="inner photo-art" style="--ar:4/3">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+            <rect width="400" height="300" fill="#141414"/>
+            <path d="M0 220 Q100 200 200 220 Q300 240 400 220 L400 300 L0 300Z" fill="rgba(205,127,50,0.08)"/>
+            <circle cx="200" cy="80" r="50" stroke="#CD7F32" stroke-width="0.75" fill="none" opacity="0.2"/>
+            <path d="M170 220 L200 160 L230 220" fill="rgba(205,127,50,0.15)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6"/>
+            <path d="M50 200 Q200 150 350 200" stroke="#CD7F32" stroke-width="1" fill="none" stroke-dasharray="4 4" opacity="0.25"/>
+          </svg>
+        </div>
+      </div>
+      <div class="gallery-card-info"><h4>Sneha & Karthik</h4><p>Beach Wedding · Kovalam</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── DIVIDER ─── -->
+<div class="gallery-divider-section">
+  <span class="script-large">A Thousand Stories</span>
+  <p>Each wedding is a universe in itself — filled with laughter, tears of joy, nervous glances, and the quiet magic of two lives becoming one. We are honoured to tell every one of them.</p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 2 – RECEPTION & CELEBRATIONS
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper alt">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">02</div>
+    <div class="cat-heading-text">
+      <h2>Reception & <em>Celebrations</em></h2>
+      <p>Grand receptions, parties and milestone moments curated with luxury</p>
+    </div>
+  </div>
+
+  <div class="masonry-grid">
+    <!-- Masonry items with varied aspect ratios -->
+    <div class="masonry-item gallery-item reveal" data-cat="reception" onclick="openLightbox('Grand Reception Kochi','Reception Decor')">
+      <div class="photo-art" style="--ar:3/4; min-height:280px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="400" fill="#141414"/>
+          <rect x="40" y="40" width="220" height="320" fill="none" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+          <path d="M40 120 L260 120" stroke="#CD7F32" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.2"/>
+          <circle cx="150" cy="80" r="35" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <rect x="80" y="200" width="140" height="160" fill="rgba(205,127,50,0.06)"/>
+          <circle cx="100" cy="180" r="20" fill="rgba(205,127,50,0.1)" opacity="0.5"/>
+          <circle cx="200" cy="170" r="20" fill="rgba(205,127,50,0.1)" opacity="0.5"/>
+          <circle cx="150" cy="155" r="25" fill="rgba(205,127,50,0.12)" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Reception</div>
+        <div class="masonry-item-title">Grand Ballroom — Kochi</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal reveal-delay-1" data-cat="reception" onclick="openLightbox('Garden Reception','Outdoor Reception')">
+      <div class="photo-art" style="--ar:1/1; min-height:200px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <circle cx="150" cy="150" r="120" fill="none" stroke="#CD7F32" stroke-width="0.5" opacity="0.15"/>
+          <circle cx="150" cy="150" r="80" fill="none" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+          <!-- table arrangement -->
+          <circle cx="100" cy="120" r="25" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <circle cx="200" cy="120" r="25" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <circle cx="150" cy="190" r="30" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75" opacity="0.6"/>
+          <circle cx="75" cy="200" r="20" fill="rgba(205,127,50,0.07)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="225" cy="200" r="20" fill="rgba(205,127,50,0.07)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Outdoor Reception</div>
+        <div class="masonry-item-title">Garden Party — Thrissur</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal reveal-delay-2" data-cat="reception" onclick="openLightbox('Rooftop Reception','Rooftop Celebration')">
+      <div class="photo-art" style="--ar:4/3; min-height:220px;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <path d="M0 180 L400 180 L400 300 L0 300Z" fill="rgba(205,127,50,0.04)"/>
+          <path d="M50 180 L80 80 L320 80 L350 180" stroke="#CD7F32" stroke-width="0.75" fill="none" opacity="0.3"/>
+          <circle cx="100" cy="140" r="18" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="200" cy="130" r="18" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="300" cy="140" r="18" fill="rgba(205,127,50,0.12)"/>
+          <path d="M80 80 Q200 40 320 80" stroke="#CD7F32" stroke-width="1" fill="none" stroke-dasharray="5 3" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Rooftop</div>
+        <div class="masonry-item-title">Skyline Reception — Kochi</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal" data-cat="reception" onclick="openLightbox('Beach Reception','Beachside Party')">
+      <div class="photo-art" style="--ar:2/1; min-height:180px;">
+        <svg width="100%" height="100%" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="600" height="300" fill="#141414"/>
+          <path d="M0 220 Q150 190 300 220 Q450 250 600 220 L600 300 L0 300Z" fill="rgba(205,127,50,0.07)"/>
+          <path d="M100 50 L120 180" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <path d="M200 40 L220 180" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <path d="M380 40 L360 180" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <path d="M480 50 L460 180" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <path d="M80 50 Q300 20 520 50" stroke="#CD7F32" stroke-width="1" fill="none" stroke-dasharray="6 4" opacity="0.35"/>
+          <path d="M90 70 Q300 42 510 70" stroke="#CD7F32" stroke-width="0.5" fill="none" stroke-dasharray="6 4" opacity="0.25"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Beach Party</div>
+        <div class="masonry-item-title">Sunset Reception — Varkala</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal reveal-delay-1" data-cat="reception" onclick="openLightbox('Heritage Reception','Palace Wedding')">
+      <div class="photo-art" style="--ar:3/4; min-height:280px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="400" fill="#141414"/>
+          <!-- Palace facade -->
+          <rect x="30" y="120" width="240" height="280" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <rect x="80" y="60" width="140" height="80" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.75" opacity="0.25"/>
+          <path d="M80 60 Q150 20 220 60" stroke="#CD7F32" stroke-width="1" fill="rgba(205,127,50,0.06)" opacity="0.5"/>
+          <!-- Doorway arch -->
+          <path d="M120 400 L120 280 Q150 240 180 280 L180 400" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.06)" opacity="0.6"/>
+          <!-- Windows -->
+          <rect x="50" y="160" width="50" height="60" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <rect x="200" y="160" width="50" height="60" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Heritage Palace</div>
+        <div class="masonry-item-title">Royal Reception — Mysuru</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal reveal-delay-2" data-cat="reception" onclick="openLightbox('Indoor Hall Reception','5-Star Reception')">
+      <div class="photo-art" style="--ar:1/1; min-height:200px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Chandelier -->
+          <circle cx="150" cy="50" r="30" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <path d="M130 80 L80 150 M150 80 L150 160 M170 80 L220 150" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <!-- Tables -->
+          <ellipse cx="90" cy="220" rx="40" ry="20" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <ellipse cx="210" cy="220" rx="40" ry="20" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <ellipse cx="150" cy="240" rx="40" ry="20" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <!-- Drapes -->
+          <path d="M0 0 L0 200 Q20 230 40 200 Q60 170 80 200 L80 0" fill="rgba(205,127,50,0.04)" opacity="0.5"/>
+          <path d="M220 0 L220 200 Q240 230 260 200 Q280 170 300 200 L300 0" fill="rgba(205,127,50,0.04)" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">5-Star Reception</div>
+        <div class="masonry-item-title">Grand Hall — Ernakulam</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 3 – DECOR & FLORALS
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">03</div>
+    <div class="cat-heading-text">
+      <h2>Decor & <em>Florals</em></h2>
+      <p>Mandaps, centrepieces, archways and atmospheres crafted to perfection</p>
+    </div>
+  </div>
+  <div class="grid-4 reveal">
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Floral Arch','Floral Mandap')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Arch -->
+          <path d="M80 300 L80 140 Q150 60 220 140 L220 300" stroke="#CD7F32" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <!-- Flowers along arch -->
+          <circle cx="80" cy="140" r="18" fill="rgba(205,127,50,0.2)" stroke="#CD7F32" stroke-width="0.5"/>
+          <circle cx="97" cy="110" r="14" fill="rgba(205,127,50,0.18)" stroke="#CD7F32" stroke-width="0.5"/>
+          <circle cx="125" cy="88" r="16" fill="rgba(205,127,50,0.22)" stroke="#CD7F32" stroke-width="0.5"/>
+          <circle cx="150" cy="78" r="16" fill="rgba(205,127,50,0.25)" stroke="#CD7F32" stroke-width="0.5"/>
+          <circle cx="175" cy="88" r="16" fill="rgba(205,127,50,0.22)" stroke="#CD7F32" stroke-width="0.5"/>
+          <circle cx="203" cy="110" r="14" fill="rgba(205,127,50,0.18)" stroke="#CD7F32" stroke-width="0.5"/>
+          <circle cx="220" cy="140" r="18" fill="rgba(205,127,50,0.2)" stroke="#CD7F32" stroke-width="0.5"/>
+          <!-- Floor -->
+          <rect x="60" y="270" width="180" height="30" fill="rgba(205,127,50,0.06)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Floral Arch Mandap</h4><p>Decor · Thrissur</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Table Centrepiece','Floral Centrepiece')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <ellipse cx="150" cy="230" rx="80" ry="20" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <rect x="140" y="130" width="20" height="100" fill="rgba(205,127,50,0.15)"/>
+          <!-- Flower bloom -->
+          <circle cx="150" cy="120" r="50" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="150" cy="110" r="35" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="150" cy="105" r="22" fill="rgba(205,127,50,0.18)" stroke="#CD7F32" stroke-width="0.75" opacity="0.7"/>
+          <!-- Petals -->
+          <ellipse cx="150" cy="80" rx="10" ry="18" fill="rgba(205,127,50,0.2)" opacity="0.6"/>
+          <ellipse cx="125" cy="90" rx="10" ry="18" fill="rgba(205,127,50,0.2)" opacity="0.6" transform="rotate(-35 125 90)"/>
+          <ellipse cx="175" cy="90" rx="10" ry="18" fill="rgba(205,127,50,0.2)" opacity="0.6" transform="rotate(35 175 90)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Floral Centrepiece</h4><p>Table Decor · Kochi</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Stage Backdrop','Stage Decor')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Backdrop panels -->
+          <rect x="20" y="30" width="260" height="200" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.5" opacity="0.25"/>
+          <rect x="35" y="45" width="100" height="180" fill="rgba(205,127,50,0.05)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <rect x="165" y="45" width="100" height="180" fill="rgba(205,127,50,0.05)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <!-- Gold script on backdrop -->
+          <path d="M100 140 Q150 120 200 140" stroke="#CD7F32" stroke-width="1.5" fill="none" opacity="0.5"/>
+          <circle cx="150" cy="120" r="20" fill="rgba(205,127,50,0.15)" opacity="0.6"/>
+          <!-- Lights -->
+          <circle cx="60" cy="60" r="5" fill="rgba(205,127,50,0.4)"/>
+          <circle cx="240" cy="60" r="5" fill="rgba(205,127,50,0.4)"/>
+          <circle cx="150" cy="50" r="6" fill="rgba(205,127,50,0.5)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Grand Stage Backdrop</h4><p>Stage Decor · Palakkad</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Entrance Decor','Floral Entrance')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Gate/entrance -->
+          <rect x="60" y="40" width="180" height="260" fill="rgba(205,127,50,0.03)" stroke="#CD7F32" stroke-width="1" opacity="0.3"/>
+          <rect x="70" y="50" width="70" height="250" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+          <rect x="160" y="50" width="70" height="250" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+          <!-- Flowers -->
+          <g opacity="0.5">
+            <circle cx="60" cy="40" r="20" fill="rgba(205,127,50,0.3)"/>
+            <circle cx="240" cy="40" r="20" fill="rgba(205,127,50,0.3)"/>
+            <circle cx="60" cy="80" r="15" fill="rgba(205,127,50,0.2)"/>
+            <circle cx="240" cy="80" r="15" fill="rgba(205,127,50,0.2)"/>
+            <circle cx="60" cy="115" r="15" fill="rgba(205,127,50,0.2)"/>
+            <circle cx="240" cy="115" r="15" fill="rgba(205,127,50,0.2)"/>
+          </g>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Floral Entrance Gate</h4><p>Entry Decor · Kozhikode</p></div>
+    </div>
+  </div>
+
+  <!-- Second row decor -->
+  <div class="grid-3 reveal" style="margin-top:1.5rem;">
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Poolside Decor','Poolside Setup')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/2;">
+        <svg width="100%" height="100%" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="450" height="300" fill="#141414"/>
+          <rect x="60" y="150" width="330" height="120" rx="5" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <!-- candles floating -->
+          <circle cx="120" cy="190" r="12" fill="rgba(205,127,50,0.2)"/>
+          <circle cx="225" cy="180" r="12" fill="rgba(205,127,50,0.2)"/>
+          <circle cx="330" cy="195" r="12" fill="rgba(205,127,50,0.2)"/>
+          <path d="M100 150 L120 60 L140 150" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.3"/>
+          <path d="M200 150 L225 50 L250 150" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.3"/>
+          <path d="M310 150 L330 65 L350 150" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.3"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Poolside Floral Setup</h4><p>Decor · Kochi</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Chandelier Decor','Chandelier Hanging')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/2;">
+        <svg width="100%" height="100%" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="450" height="300" fill="#141414"/>
+          <line x1="225" y1="0" x2="225" y2="80" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <!-- Chandelier -->
+          <circle cx="225" cy="90" r="40" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="1" opacity="0.5"/>
+          <circle cx="225" cy="90" r="25" fill="rgba(205,127,50,0.12)" stroke="#CD7F32" stroke-width="0.75" opacity="0.6"/>
+          <!-- Arms -->
+          <line x1="185" y1="90" x2="145" y2="130" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <line x1="265" y1="90" x2="305" y2="130" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <line x1="200" y1="115" x2="170" y2="150" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <line x1="250" y1="115" x2="280" y2="150" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="225" cy="90" r="8" fill="rgba(205,127,50,0.5)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Crystal Chandelier</h4><p>Ceiling Decor · Thrissur</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="decor" onclick="openLightbox('Fairy Lights','Fairy Light Decor')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/2;">
+        <svg width="100%" height="100%" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="450" height="300" fill="#141414"/>
+          <!-- String lights -->
+          <path d="M0 60 Q112 80 225 60 Q337 40 450 60" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.3" stroke-dasharray="2 8"/>
+          <path d="M0 100 Q112 120 225 100 Q337 80 450 100" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.3" stroke-dasharray="2 8"/>
+          <path d="M0 140 Q112 160 225 140 Q337 120 450 140" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.25" stroke-dasharray="2 8"/>
+          <!-- Glow dots -->
+          <g opacity="0.7">
+            <circle cx="50" cy="58" r="3" fill="#E0A96D"/>
+            <circle cx="150" cy="74" r="3" fill="#E0A96D"/>
+            <circle cx="250" cy="58" r="3" fill="#E0A96D"/>
+            <circle cx="350" cy="44" r="3" fill="#E0A96D"/>
+            <circle cx="90" cy="98" r="3" fill="#E0A96D"/>
+            <circle cx="200" cy="112" r="3" fill="#E0A96D"/>
+            <circle cx="310" cy="96" r="3" fill="#E0A96D"/>
+            <circle cx="420" cy="100" r="3" fill="#E0A96D"/>
+          </g>
+          <!-- Couples silhouette -->
+          <ellipse cx="200" cy="240" rx="15" ry="40" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="200" cy="190" r="11" fill="rgba(205,127,50,0.18)"/>
+          <ellipse cx="250" cy="240" rx="15" ry="40" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="250" cy="190" r="11" fill="rgba(205,127,50,0.18)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Fairy Light Canopy</h4><p>Lighting · Kozhikode</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 4 – ENGAGEMENT CEREMONIES
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper alt">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">04</div>
+    <div class="cat-heading-text">
+      <h2>Engagement <em>Ceremonies</em></h2>
+      <p>The first chapter of forever — intimate, joyful, beautifully planned</p>
+    </div>
+  </div>
+  <div class="grid-2 reveal">
+    <div class="gallery-card gallery-item" data-cat="engagement" onclick="openLightbox('Ring Ceremony','Ring Exchange')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:16/9;">
+        <svg width="100%" height="100%" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="640" height="360" fill="#141414"/>
+          <circle cx="320" cy="180" r="80" fill="none" stroke="#CD7F32" stroke-width="1" opacity="0.25"/>
+          <circle cx="320" cy="180" r="50" fill="none" stroke="#CD7F32" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="320" cy="180" r="20" fill="rgba(205,127,50,0.2)" stroke="#CD7F32" stroke-width="1"/>
+          <!-- Hands -->
+          <path d="M200 200 Q260 160 320 180 Q380 200 440 160" stroke="#CD7F32" stroke-width="1.5" fill="none" opacity="0.4"/>
+          <!-- Ring box -->
+          <rect x="290" y="200" width="60" height="50" rx="4" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <rect x="295" y="205" width="50" height="20" rx="2" fill="rgba(205,127,50,0.15)" opacity="0.6"/>
+          <!-- Flowers -->
+          <circle cx="180" cy="120" r="25" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <circle cx="460" cy="120" r="25" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Ring Ceremony</h4><p>Engagement · Kochi</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="engagement" onclick="openLightbox('Intimate Engagement','Intimate Ceremony')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:16/9;">
+        <svg width="100%" height="100%" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="640" height="360" fill="#141414"/>
+          <!-- Intimate garden setting -->
+          <path d="M100 360 L100 200 Q120 120 200 150 L200 360" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.04)" opacity="0.3"/>
+          <path d="M440 360 L440 200 Q460 120 540 150 L540 360" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.04)" opacity="0.3"/>
+          <!-- Couple sitting -->
+          <ellipse cx="300" cy="280" rx="20" ry="60" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="300" cy="210" r="16" fill="rgba(205,127,50,0.2)"/>
+          <ellipse cx="340" cy="285" rx="20" ry="60" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="340" cy="215" r="16" fill="rgba(205,127,50,0.2)"/>
+          <!-- Rose petals -->
+          <g opacity="0.4" fill="#CD7F32">
+            <ellipse cx="240" cy="340" rx="8" ry="4" transform="rotate(20 240 340)"/>
+            <ellipse cx="260" cy="350" rx="6" ry="3" transform="rotate(-15 260 350)"/>
+            <ellipse cx="380" cy="345" rx="7" ry="3.5" transform="rotate(30 380 345)"/>
+            <ellipse cx="400" cy="338" rx="8" ry="4" transform="rotate(-20 400 338)"/>
+          </g>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Garden Engagement</h4><p>Intimate · Palakkad</p></div>
+    </div>
+  </div>
+  <div class="grid-4 reveal" style="margin-top:1.5rem;">
+    <div class="gallery-card gallery-item" data-cat="engagement" onclick="openLightbox('Engagement Portrait','Couple Portrait')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/4;">
+        <svg width="100%" height="100%" viewBox="0 0 225 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="225" height="300" fill="#141414"/>
+          <circle cx="112" cy="100" r="55" fill="none" stroke="#CD7F32" stroke-width="0.75" opacity="0.25"/>
+          <ellipse cx="100" cy="200" rx="22" ry="60" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="100" cy="130" r="18" fill="rgba(205,127,50,0.2)"/>
+          <ellipse cx="135" cy="205" rx="22" ry="60" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="135" cy="135" r="18" fill="rgba(205,127,50,0.2)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Couple Portrait</h4><p>Pre-Wedding · Munnar</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="engagement" onclick="openLightbox('Backwater Engagement','Kerala Backwaters')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/4;">
+        <svg width="100%" height="100%" viewBox="0 0 225 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="225" height="300" fill="#141414"/>
+          <path d="M0 180 Q112 150 225 180 L225 300 L0 300Z" fill="rgba(205,127,50,0.06)"/>
+          <!-- Houseboat outline -->
+          <path d="M20 180 L200 180 L180 130 L40 130Z" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <rect x="60" y="110" width="100" height="30" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <!-- Reflection -->
+          <path d="M20 185 Q112 195 200 185" stroke="#CD7F32" stroke-width="0.5" fill="none" stroke-dasharray="4 4" opacity="0.2"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Backwater Moments</h4><p>Engagement · Alleppey</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="engagement" onclick="openLightbox('Floral Engagement Decor','Engagement Setup')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/4;">
+        <svg width="100%" height="100%" viewBox="0 0 225 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="225" height="300" fill="#141414"/>
+          <!-- Floral frame -->
+          <rect x="20" y="20" width="185" height="260" fill="none" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+          <circle cx="20" cy="20" r="20" fill="rgba(205,127,50,0.2)" opacity="0.5"/>
+          <circle cx="205" cy="20" r="20" fill="rgba(205,127,50,0.2)" opacity="0.5"/>
+          <circle cx="20" cy="280" r="20" fill="rgba(205,127,50,0.2)" opacity="0.5"/>
+          <circle cx="205" cy="280" r="20" fill="rgba(205,127,50,0.2)" opacity="0.5"/>
+          <circle cx="112" cy="140" r="50" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <circle cx="112" cy="140" r="30" fill="rgba(205,127,50,0.12)" opacity="0.6"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Floral Setup</h4><p>Engagement Decor</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="engagement" onclick="openLightbox('Sunset Engagement','Sunset Shot')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:3/4;">
+        <svg width="100%" height="100%" viewBox="0 0 225 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <defs>
+            <radialGradient id="sg1" cx="50%" cy="70%" r="60%">
+              <stop offset="0%" stop-color="#CD7F32" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="225" height="300" fill="#141414"/>
+          <rect width="225" height="300" fill="url(#sg1)"/>
+          <!-- Sun silhouette -->
+          <circle cx="112" cy="180" r="60" fill="rgba(205,127,50,0.08)"/>
+          <circle cx="112" cy="180" r="40" fill="rgba(205,127,50,0.12)"/>
+          <circle cx="112" cy="180" r="22" fill="rgba(205,127,50,0.2)"/>
+          <!-- Couple silhouette -->
+          <ellipse cx="90" cy="250" rx="14" ry="40" fill="rgba(20,20,20,0.8)"/>
+          <circle cx="90" cy="200" r="12" fill="rgba(20,20,20,0.8)"/>
+          <ellipse cx="125" cy="252" rx="14" ry="40" fill="rgba(20,20,20,0.8)"/>
+          <circle cx="125" cy="202" r="12" fill="rgba(20,20,20,0.8)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Sunset Silhouette</h4><p>Candid · Varkala</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 5 – CATERING SHOWCASES
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">05</div>
+    <div class="cat-heading-text">
+      <h2>Culinary <em>Artistry</em></h2>
+      <p>Sadyas, buffets, dessert tables and gourmet feasts that delight every guest</p>
+    </div>
+  </div>
+  <div class="masonry-grid reveal">
+    <div class="masonry-item gallery-item" data-cat="catering" onclick="openLightbox('Kerala Sadya','Traditional Sadya')">
+      <div class="photo-art" style="--ar:4/3; min-height:220px;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <!-- Banana leaf -->
+          <path d="M50 160 Q200 100 350 160 L350 220 Q200 280 50 220Z" fill="rgba(80,120,60,0.15)" stroke="rgba(100,150,80,0.3)" stroke-width="1"/>
+          <!-- Dishes arranged -->
+          <circle cx="120" cy="185" r="20" fill="rgba(205,127,50,0.15)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6"/>
+          <circle cx="170" cy="170" r="18" fill="rgba(150,100,50,0.2)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="220" cy="170" r="20" fill="rgba(200,150,50,0.15)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6"/>
+          <circle cx="270" cy="175" r="22" fill="rgba(180,120,60,0.15)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="320" cy="185" r="18" fill="rgba(205,127,50,0.12)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <rect x="80" y="215" width="240" height="8" rx="3" fill="rgba(205,127,50,0.3)" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Kerala Sadya</div>
+        <div class="masonry-item-title">26-Dish Feast on Banana Leaf</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-1" data-cat="catering" onclick="openLightbox('Dessert Table','Dessert Spread')">
+      <div class="photo-art" style="--ar:1/1; min-height:200px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Table -->
+          <rect x="20" y="200" width="260" height="15" rx="2" fill="rgba(205,127,50,0.2)"/>
+          <!-- Cake tiers -->
+          <rect x="100" y="100" width="100" height="100" rx="5" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <rect x="115" y="70" width="70" height="50" rx="4" fill="rgba(205,127,50,0.12)" stroke="#CD7F32" stroke-width="0.75" opacity="0.6"/>
+          <rect x="127" y="50" width="46" height="30" rx="3" fill="rgba(205,127,50,0.15)" stroke="#CD7F32" stroke-width="0.75" opacity="0.7"/>
+          <!-- Topper -->
+          <circle cx="150" cy="44" r="8" fill="rgba(205,127,50,0.4)"/>
+          <!-- Macrons -->
+          <circle cx="50" cy="195" r="18" fill="rgba(205,127,50,0.15)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="240" cy="195" r="18" fill="rgba(205,127,50,0.15)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Dessert Table</div>
+        <div class="masonry-item-title">Luxury Sweet Spread</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-2" data-cat="catering" onclick="openLightbox('Live Counter','Live Food Station')">
+      <div class="photo-art" style="--ar:3/2; min-height:180px;">
+        <svg width="100%" height="100%" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="450" height="300" fill="#141414"/>
+          <!-- Counter -->
+          <rect x="30" y="180" width="390" height="80" rx="3" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <!-- Dishes on counter -->
+          <circle cx="90" cy="175" r="25" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="160" cy="175" r="25" fill="rgba(150,100,50,0.12)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="225" cy="175" r="25" fill="rgba(200,150,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="290" cy="175" r="25" fill="rgba(180,120,60,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <circle cx="360" cy="175" r="25" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.5"/>
+          <!-- Sign -->
+          <rect x="170" y="60" width="110" height="50" rx="3" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <path d="M185 80 L245 80 M185 95 L235 95" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Live Station</div>
+        <div class="masonry-item-title">Chef's Live Counter</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal" data-cat="catering" onclick="openLightbox('Buffet Setup','Grand Buffet')">
+      <div class="photo-art" style="--ar:2/1; min-height:180px;">
+        <svg width="100%" height="100%" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="600" height="300" fill="#141414"/>
+          <rect x="20" y="200" width="560" height="60" rx="2" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <!-- Food platters row -->
+          <g opacity="0.5">
+            <ellipse cx="80" cy="195" rx="40" ry="12" fill="rgba(205,127,50,0.12)" stroke="#CD7F32" stroke-width="0.5"/>
+            <ellipse cx="180" cy="195" rx="40" ry="12" fill="rgba(200,150,50,0.1)" stroke="#CD7F32" stroke-width="0.5"/>
+            <ellipse cx="280" cy="195" rx="40" ry="12" fill="rgba(150,100,50,0.12)" stroke="#CD7F32" stroke-width="0.5"/>
+            <ellipse cx="380" cy="195" rx="40" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5"/>
+            <ellipse cx="480" cy="195" rx="40" ry="12" fill="rgba(180,120,60,0.12)" stroke="#CD7F32" stroke-width="0.5"/>
+          </g>
+          <!-- Label cards -->
+          <rect x="55" y="150" width="50" height="30" rx="2" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <rect x="155" y="150" width="50" height="30" rx="2" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <rect x="255" y="150" width="50" height="30" rx="2" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <rect x="355" y="150" width="50" height="30" rx="2" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+          <rect x="455" y="150" width="50" height="30" rx="2" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Buffet</div>
+        <div class="masonry-item-title">Grand Multi-Cuisine Buffet</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-1" data-cat="catering" onclick="openLightbox('Wedding Cake','Tiered Wedding Cake')">
+      <div class="photo-art" style="--ar:3/4; min-height:280px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="400" fill="#141414"/>
+          <!-- 4-tier cake -->
+          <rect x="40" y="300" width="220" height="80" rx="6" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="1" opacity="0.6"/>
+          <rect x="65" y="230" width="170" height="80" rx="5" fill="rgba(205,127,50,0.12)" stroke="#CD7F32" stroke-width="1" opacity="0.65"/>
+          <rect x="90" y="170" width="120" height="70" rx="4" fill="rgba(205,127,50,0.14)" stroke="#CD7F32" stroke-width="1" opacity="0.7"/>
+          <rect x="110" y="120" width="80" height="60" rx="3" fill="rgba(205,127,50,0.18)" stroke="#CD7F32" stroke-width="1" opacity="0.75"/>
+          <!-- Topper flowers -->
+          <circle cx="150" cy="100" r="18" fill="rgba(205,127,50,0.3)" stroke="#CD7F32" stroke-width="0.75"/>
+          <circle cx="138" cy="112" r="10" fill="rgba(205,127,50,0.25)"/>
+          <circle cx="162" cy="112" r="10" fill="rgba(205,127,50,0.25)"/>
+          <!-- Decorative lines on each tier -->
+          <path d="M60 330 Q150 310 240 330" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.4"/>
+          <path d="M80 265 Q150 250 220 265" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.4"/>
+          <path d="M100 200 Q150 188 200 200" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Wedding Cake</div>
+        <div class="masonry-item-title">4-Tier Luxury Cake</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-2" data-cat="catering" onclick="openLightbox('Table Setting','Dinner Setting')">
+      <div class="photo-art" style="--ar:1/1; min-height:200px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Round dining table -->
+          <circle cx="150" cy="150" r="110" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="150" cy="150" r="90" fill="rgba(205,127,50,0.03)" stroke="#CD7F32" stroke-width="0.5" opacity="0.25"/>
+          <!-- Place settings -->
+          <ellipse cx="150" cy="55" rx="25" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6"/>
+          <ellipse cx="240" cy="90" rx="25" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6" transform="rotate(60 240 90)"/>
+          <ellipse cx="240" cy="210" rx="25" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6" transform="rotate(120 240 210)"/>
+          <ellipse cx="150" cy="245" rx="25" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6"/>
+          <ellipse cx="60" cy="210" rx="25" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6" transform="rotate(60 60 210)"/>
+          <ellipse cx="60" cy="90" rx="25" ry="12" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6" transform="rotate(120 60 90)"/>
+          <!-- Centrepiece -->
+          <circle cx="150" cy="150" r="28" fill="rgba(205,127,50,0.15)" stroke="#CD7F32" stroke-width="0.75" opacity="0.7"/>
+          <circle cx="150" cy="150" r="14" fill="rgba(205,127,50,0.25)" opacity="0.8"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Fine Dining Setup</div>
+        <div class="masonry-item-title">Luxury Table Setting</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 6 – MEHENDI & BEAUTY
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper alt">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">06</div>
+    <div class="cat-heading-text">
+      <h2>Mehendi & <em>Bridal Beauty</em></h2>
+      <p>Intricate patterns, radiant looks, timeless artistry</p>
+    </div>
+  </div>
+  <div class="grid-4 reveal">
+    <div class="gallery-card gallery-item" data-cat="mehendi" onclick="openLightbox('Bridal Mehendi','Kerala Bridal Mehendi')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Mehendi hand pattern -->
+          <ellipse cx="150" cy="180" rx="80" ry="100" fill="rgba(140,74,30,0.08)" stroke="rgba(140,74,30,0.4)" stroke-width="0.75"/>
+          <!-- Intricate patterns -->
+          <circle cx="150" cy="160" r="40" fill="none" stroke="rgba(140,74,30,0.5)" stroke-width="0.75"/>
+          <circle cx="150" cy="160" r="25" fill="none" stroke="rgba(140,74,30,0.4)" stroke-width="0.5"/>
+          <circle cx="150" cy="160" r="12" fill="rgba(140,74,30,0.2)"/>
+          <path d="M110 120 Q150 100 190 120 Q180 140 150 130 Q120 140 110 120Z" fill="rgba(140,74,30,0.15)" stroke="rgba(140,74,30,0.4)" stroke-width="0.5"/>
+          <!-- Fingers -->
+          <rect x="115" y="70" width="18" height="60" rx="9" fill="rgba(140,74,30,0.06)" stroke="rgba(140,74,30,0.3)" stroke-width="0.5"/>
+          <rect x="140" y="60" width="18" height="60" rx="9" fill="rgba(140,74,30,0.06)" stroke="rgba(140,74,30,0.3)" stroke-width="0.5"/>
+          <rect x="165" y="70" width="18" height="60" rx="9" fill="rgba(140,74,30,0.06)" stroke="rgba(140,74,30,0.3)" stroke-width="0.5"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Bridal Mehendi</h4><p>Kerala Pattern</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="mehendi" onclick="openLightbox('Rajasthani Mehendi','Full Arm Mehendi')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <rect x="110" y="20" width="80" height="270" rx="10" fill="rgba(140,74,30,0.06)" stroke="rgba(140,74,30,0.35)" stroke-width="0.75"/>
+          <!-- Pattern fills -->
+          <g stroke="rgba(140,74,30,0.4)" stroke-width="0.5" fill="none">
+            <circle cx="150" cy="80" r="25"/>
+            <circle cx="150" cy="80" r="15"/>
+            <path d="M125 120 Q150 110 175 120 Q170 140 150 135 Q130 140 125 120Z"/>
+            <path d="M125 160 Q150 148 175 160 Q170 180 150 175 Q130 180 125 160Z"/>
+            <path d="M125 200 Q150 188 175 200 Q170 220 150 215 Q130 220 125 200Z"/>
+            <path d="M125 240 Q150 228 175 240 Q170 260 150 255 Q130 260 125 240Z"/>
+          </g>
+          <circle cx="150" cy="80" r="8" fill="rgba(140,74,30,0.3)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Rajasthani Full Arm</h4><p>Traditional Pattern</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="mehendi" onclick="openLightbox('Bridal Makeup','Bridal Look')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <!-- Face outline -->
+          <ellipse cx="150" cy="150" rx="80" ry="100" fill="rgba(205,127,50,0.06)" stroke="rgba(205,127,50,0.25)" stroke-width="0.75"/>
+          <!-- Crown/Maang Tikka -->
+          <path d="M100 80 Q150 50 200 80" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.5"/>
+          <circle cx="150" cy="72" r="10" fill="rgba(205,127,50,0.3)"/>
+          <!-- Eyes -->
+          <path d="M115 130 Q140 118 165 130" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.5"/>
+          <circle cx="130" cy="130" r="5" fill="rgba(205,127,50,0.2)"/>
+          <circle cx="170" cy="130" r="5" fill="rgba(205,127,50,0.2)"/>
+          <!-- Nose ring -->
+          <circle cx="150" cy="165" r="4" stroke="#CD7F32" stroke-width="0.75" fill="none" opacity="0.5"/>
+          <!-- Lips -->
+          <path d="M130 185 Q150 178 170 185 Q160 198 150 200 Q140 198 130 185Z" fill="rgba(205,127,50,0.2)" stroke="#CD7F32" stroke-width="0.5" opacity="0.6"/>
+          <!-- Jewelry -->
+          <path d="M70 160 Q100 170 110 180" stroke="#CD7F32" stroke-width="0.75" stroke-dasharray="3 2" fill="none" opacity="0.4"/>
+          <path d="M230 160 Q200 170 190 180" stroke="#CD7F32" stroke-width="0.75" stroke-dasharray="3 2" fill="none" opacity="0.4"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Bridal Makeup</h4><p>Full Bridal Look</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="mehendi" onclick="openLightbox('Arabic Mehendi','Arabic Pattern')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:1/1;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <ellipse cx="150" cy="180" rx="80" ry="100" fill="rgba(140,74,30,0.06)" stroke="rgba(140,74,30,0.3)" stroke-width="0.5"/>
+          <!-- Arabic floral pattern -->
+          <path d="M90 200 Q110 150 150 140 Q190 150 210 200 Q190 240 150 250 Q110 240 90 200Z" fill="rgba(140,74,30,0.1)" stroke="rgba(140,74,30,0.5)" stroke-width="0.75"/>
+          <path d="M115 180 Q130 160 150 155 Q170 160 185 180" fill="none" stroke="rgba(140,74,30,0.5)" stroke-width="0.5"/>
+          <circle cx="150" cy="155" r="8" fill="rgba(140,74,30,0.3)"/>
+          <path d="M110 220 Q125 200 140 195" fill="none" stroke="rgba(140,74,30,0.4)" stroke-width="0.5"/>
+          <path d="M190 220 Q175 200 160 195" fill="none" stroke="rgba(140,74,30,0.4)" stroke-width="0.5"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Arabic Floral</h4><p>Modern Arabic Pattern</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 7 – VENUE & AMBIENCE
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">07</div>
+    <div class="cat-heading-text">
+      <h2>Venues & <em>Ambiences</em></h2>
+      <p>From heritage palaces to hilltop gardens — the perfect setting for every love story</p>
+    </div>
+  </div>
+  <div class="feature-row reveal gallery-item" data-cat="venue">
+    <div class="feature-cell" onclick="openLightbox('Heritage Palace Venue','Palace Wedding Venue')">
+      <div class="photo-art" style="--ar:3/2;">
+        <svg width="100%" height="100%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="600" height="400" fill="#141414"/>
+          <!-- Palace exterior -->
+          <rect x="50" y="100" width="500" height="300" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.75" opacity="0.3"/>
+          <!-- Towers -->
+          <rect x="50" y="40" width="80" height="80" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.75" opacity="0.35"/>
+          <rect x="470" y="40" width="80" height="80" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.75" opacity="0.35"/>
+          <path d="M50 40 L90 0 L130 40" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.08)" opacity="0.4"/>
+          <path d="M470 40 L510 0 L550 40" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.08)" opacity="0.4"/>
+          <!-- Main entrance arch -->
+          <path d="M230 400 L230 220 Q300 160 370 220 L370 400" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="1" opacity="0.4"/>
+          <!-- Balcony rail -->
+          <path d="M50 200 L550 200" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <!-- Windows -->
+          <g stroke="#CD7F32" stroke-width="0.5" fill="rgba(205,127,50,0.04)" opacity="0.4">
+            <rect x="90" y="120" width="50" height="60"/>
+            <rect x="170" y="120" width="50" height="60"/>
+            <rect x="380" y="120" width="50" height="60"/>
+            <rect x="460" y="120" width="50" height="60"/>
+          </g>
+          <!-- Ground steps -->
+          <rect x="200" y="370" width="200" height="15" fill="rgba(205,127,50,0.08)"/>
+          <rect x="215" y="355" width="170" height="15" fill="rgba(205,127,50,0.06)"/>
+        </svg>
+      </div>
+      <div class="feature-cell-overlay">
+        <span>Heritage Palace</span>
+        <h3>Palatial Grand Venue</h3>
+      </div>
+    </div>
+    <div class="feature-cell" onclick="openLightbox('Hilltop Garden Venue','Garden Venue')">
+      <div class="photo-art" style="--ar:3/2;">
+        <svg width="100%" height="100%" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <defs>
+            <radialGradient id="hg" cx="50%" cy="80%" r="60%">
+              <stop offset="0%" stop-color="#4a7a30" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="600" height="400" fill="#141414"/>
+          <rect width="600" height="400" fill="url(#hg)"/>
+          <!-- Hills -->
+          <path d="M0 300 Q150 200 300 250 Q450 200 600 280 L600 400 L0 400Z" fill="rgba(50,90,30,0.08)"/>
+          <!-- Floral setup on hill -->
+          <path d="M200 250 L200 150 Q300 100 400 150 L400 250" stroke="#CD7F32" stroke-width="1" fill="rgba(205,127,50,0.04)" opacity="0.4"/>
+          <circle cx="200" cy="150" r="25" fill="rgba(205,127,50,0.15)" opacity="0.5"/>
+          <circle cx="400" cy="150" r="25" fill="rgba(205,127,50,0.15)" opacity="0.5"/>
+          <circle cx="300" cy="100" r="30" fill="rgba(205,127,50,0.18)" opacity="0.6"/>
+          <!-- Stars -->
+          <g fill="#E0A96D" opacity="0.3">
+            <circle cx="100" cy="50" r="1.5"/>
+            <circle cx="200" cy="30" r="1"/>
+            <circle cx="400" cy="40" r="1.5"/>
+            <circle cx="500" cy="60" r="1"/>
+          </g>
+        </svg>
+      </div>
+      <div class="feature-cell-overlay">
+        <span>Hilltop Garden</span>
+        <h3>Nature's Grand Theatre</h3>
+      </div>
+    </div>
+  </div>
+  <div class="grid-4 reveal" style="margin-top:1.5rem;">
+    <div class="gallery-card gallery-item" data-cat="venue" onclick="openLightbox('Backwater Resort','Resort Venue')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:4/3;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <path d="M0 200 Q200 160 400 200 L400 300 L0 300Z" fill="rgba(205,127,50,0.06)"/>
+          <rect x="80" y="80" width="240" height="130" rx="3" fill="rgba(205,127,50,0.04)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <path d="M80 80 Q200 40 320 80" stroke="#CD7F32" stroke-width="0.75" fill="rgba(205,127,50,0.04)" opacity="0.4"/>
+          <!-- Coconut trees -->
+          <path d="M30 200 L50 60" stroke="rgba(80,120,60,0.4)" stroke-width="2"/>
+          <path d="M370 200 L350 60" stroke="rgba(80,120,60,0.4)" stroke-width="2"/>
+          <circle cx="50" cy="55" r="20" fill="rgba(80,120,60,0.15)"/>
+          <circle cx="350" cy="55" r="20" fill="rgba(80,120,60,0.15)"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Backwater Resort</h4><p>Venue · Alleppey</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="venue" onclick="openLightbox('Beach Venue','Beachside Setup')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:4/3;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <path d="M0 230 Q200 200 400 230 L400 300 L0 300Z" fill="rgba(205,127,50,0.05)"/>
+          <!-- Aisle on beach -->
+          <rect x="170" y="230" width="60" height="70" fill="rgba(250,250,250,0.04)"/>
+          <path d="M60 230 L170 230 M230 230 L340 230" stroke="#CD7F32" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.3"/>
+          <!-- Arch -->
+          <path d="M150 230 L150 100 Q200 60 250 100 L250 230" stroke="#CD7F32" stroke-width="1" fill="rgba(205,127,50,0.04)" opacity="0.4"/>
+          <circle cx="150" cy="100" r="18" fill="rgba(205,127,50,0.18)" opacity="0.6"/>
+          <circle cx="250" cy="100" r="18" fill="rgba(205,127,50,0.18)" opacity="0.6"/>
+          <!-- Sun -->
+          <circle cx="200" cy="60" r="30" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Beachside Mandap</h4><p>Venue · Kovalam</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="venue" onclick="openLightbox('Luxury Hall','5-Star Hall')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:4/3;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <!-- Hall interior - perspective lines -->
+          <path d="M200 20 L50 300 M200 20 L350 300" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+          <path d="M200 20 L0 200 M200 20 L400 200" stroke="#CD7F32" stroke-width="0.5" opacity="0.15"/>
+          <!-- Chandeliers -->
+          <circle cx="130" cy="80" r="30" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <circle cx="270" cy="80" r="30" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.4"/>
+          <circle cx="200" cy="50" r="35" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+          <!-- Stage -->
+          <rect x="100" y="220" width="200" height="60" rx="2" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.75" opacity="0.5"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Luxury Banquet Hall</h4><p>5-Star · Ernakulam</p></div>
+    </div>
+    <div class="gallery-card gallery-item" data-cat="venue" onclick="openLightbox('Tea Garden Venue','Munnar Tea Estate')">
+      <div class="gallery-card-img"><div class="inner photo-art" style="--ar:4/3;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <!-- Tea estate hills -->
+          <path d="M0 150 Q100 100 200 130 Q300 100 400 140 L400 300 L0 300Z" fill="rgba(50,90,30,0.1)"/>
+          <path d="M0 180 Q100 140 200 160 Q300 140 400 170 L400 300 L0 300Z" fill="rgba(50,90,30,0.08)"/>
+          <!-- Tea rows -->
+          <g stroke="rgba(80,120,60,0.25)" stroke-width="0.5">
+            <path d="M0 165 Q200 148 400 158"/>
+            <path d="M0 178 Q200 161 400 171"/>
+            <path d="M0 191 Q200 174 400 184"/>
+          </g>
+          <!-- Wedding setup on hill -->
+          <path d="M160 150 L160 80 Q200 50 240 80 L240 150" stroke="#CD7F32" stroke-width="1" fill="rgba(205,127,50,0.04)" opacity="0.5"/>
+          <circle cx="160" cy="80" r="14" fill="rgba(205,127,50,0.2)" opacity="0.6"/>
+          <circle cx="240" cy="80" r="14" fill="rgba(205,127,50,0.2)" opacity="0.6"/>
+        </svg>
+      </div></div>
+      <div class="gallery-card-info"><h4>Tea Garden Estate</h4><p>Destination · Munnar</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 8 – CANDID MOMENTS
+══════════════════════════════════════════ -->
+<div class="gallery-section-wrapper alt">
+<div class="gallery-section">
+  <div class="cat-heading reveal">
+    <div class="cat-heading-num">08</div>
+    <div class="cat-heading-text">
+      <h2>Candid <em>Moments</em></h2>
+      <p>Raw, real, unscripted — the magic between the moments</p>
+    </div>
+  </div>
+  <div class="masonry-grid reveal">
+    <div class="masonry-item gallery-item" data-cat="candid" onclick="openLightbox('Bridal Laugh','Bridal Candid')">
+      <div class="photo-art" style="--ar:3/4; min-height:280px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <defs><radialGradient id="cg1" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#CD7F32" stop-opacity="0.12"/><stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient></defs>
+          <rect width="300" height="400" fill="#141414"/>
+          <rect width="300" height="400" fill="url(#cg1)"/>
+          <ellipse cx="150" cy="260" rx="70" ry="130" fill="rgba(205,127,50,0.06)"/>
+          <circle cx="150" cy="120" r="60" fill="rgba(205,127,50,0.08)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+          <!-- Face elements -->
+          <circle cx="150" cy="110" r="35" fill="rgba(205,127,50,0.1)"/>
+          <path d="M130 115 Q150 130 170 115" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.5"/>
+          <!-- Bridal veil -->
+          <path d="M90 90 Q150 70 210 90 L230 250 Q150 290 70 250Z" fill="rgba(250,250,250,0.03)" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Candid Portrait</div>
+        <div class="masonry-item-title">Bride in Joy</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-1" data-cat="candid" onclick="openLightbox('Father Bride Moment','Father Daughter')">
+      <div class="photo-art" style="--ar:1/1; min-height:200px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <ellipse cx="105" cy="195" rx="25" ry="80" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="105" cy="105" r="20" fill="rgba(205,127,50,0.15)"/>
+          <ellipse cx="180" cy="200" rx="25" ry="80" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="180" cy="110" r="20" fill="rgba(205,127,50,0.15)"/>
+          <path d="M105 130 Q140 120 180 135" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.4"/>
+          <path d="M95 210 Q140 195 190 215" stroke="#CD7F32" stroke-width="0.5" fill="none" opacity="0.2"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Emotional</div>
+        <div class="masonry-item-title">Father & Daughter</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-2" data-cat="candid" onclick="openLightbox('First Look','First Look Moment')">
+      <div class="photo-art" style="--ar:2/1; min-height:180px;">
+        <svg width="100%" height="100%" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <defs><radialGradient id="cg2" cx="50%" cy="50%" r="40%"><stop offset="0%" stop-color="#CD7F32" stop-opacity="0.15"/><stop offset="100%" stop-color="#0A0A0A" stop-opacity="0"/></radialGradient></defs>
+          <rect width="600" height="300" fill="#141414"/>
+          <rect width="600" height="300" fill="url(#cg2)"/>
+          <ellipse cx="250" cy="185" rx="35" ry="100" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="250" cy="75" r="28" fill="rgba(205,127,50,0.18)"/>
+          <ellipse cx="360" cy="190" rx="30" ry="100" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="360" cy="80" r="28" fill="rgba(205,127,50,0.18)"/>
+          <path d="M270 80 Q305 65 340 80" stroke="#CD7F32" stroke-width="1" fill="none" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">First Look</div>
+        <div class="masonry-item-title">The First Glance</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal" data-cat="candid" onclick="openLightbox('Dancing Guests','Wedding Dance')">
+      <div class="photo-art" style="--ar:4/3; min-height:240px;">
+        <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="400" height="300" fill="#141414"/>
+          <!-- Multiple dancing silhouettes -->
+          <g fill="rgba(205,127,50,0.1)">
+            <ellipse cx="80" cy="210" rx="18" ry="60"/>
+            <ellipse cx="130" cy="215" rx="16" ry="55"/>
+            <ellipse cx="180" cy="205" rx="20" ry="65"/>
+            <ellipse cx="240" cy="215" rx="18" ry="55"/>
+            <ellipse cx="300" cy="210" rx="20" ry="60"/>
+            <ellipse cx="355" cy="215" rx="16" ry="55"/>
+          </g>
+          <g fill="rgba(205,127,50,0.18)">
+            <circle cx="80" cy="140" r="16"/>
+            <circle cx="130" cy="150" r="14"/>
+            <circle cx="180" cy="130" r="18"/>
+            <circle cx="240" cy="148" r="16"/>
+            <circle cx="300" cy="138" r="18"/>
+            <circle cx="355" cy="150" r="14"/>
+          </g>
+          <!-- Dance floor glow -->
+          <ellipse cx="200" cy="280" rx="160" ry="20" fill="rgba(205,127,50,0.06)"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Celebration</div>
+        <div class="masonry-item-title">Dance Floor Magic</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-1" data-cat="candid" onclick="openLightbox('Varmala Moment','Garland Exchange')">
+      <div class="photo-art" style="--ar:1/1; min-height:200px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="300" fill="#141414"/>
+          <ellipse cx="110" cy="195" rx="25" ry="80" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="110" cy="105" r="22" fill="rgba(205,127,50,0.16)"/>
+          <ellipse cx="190" cy="198" rx="25" ry="80" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="190" cy="108" r="22" fill="rgba(205,127,50,0.16)"/>
+          <!-- Garland -->
+          <path d="M80 90 Q110 70 150 85 Q190 70 220 90" stroke="#4a8a20" stroke-width="2" fill="none" opacity="0.5"/>
+          <circle cx="80" cy="90" r="8" fill="rgba(205,127,50,0.3)"/>
+          <circle cx="220" cy="90" r="8" fill="rgba(205,127,50,0.3)"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Varmala</div>
+        <div class="masonry-item-title">The Garland Exchange</div>
+      </div>
+    </div>
+    <div class="masonry-item gallery-item reveal-delay-2" data-cat="candid" onclick="openLightbox('Kids at Wedding','Children Candid')">
+      <div class="photo-art" style="--ar:3/4; min-height:280px;">
+        <svg width="100%" height="100%" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+          <rect width="300" height="400" fill="#141414"/>
+          <circle cx="100" cy="150" r="20" fill="rgba(205,127,50,0.18)"/>
+          <ellipse cx="100" cy="250" rx="18" ry="70" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="170" cy="165" r="20" fill="rgba(205,127,50,0.18)"/>
+          <ellipse cx="170" cy="265" rx="18" ry="70" fill="rgba(205,127,50,0.1)"/>
+          <circle cx="220" cy="155" r="16" fill="rgba(205,127,50,0.15)"/>
+          <ellipse cx="220" cy="245" rx="15" ry="60" fill="rgba(205,127,50,0.08)"/>
+          <!-- Running motion lines -->
+          <path d="M60 200 L80 200 M130 210 L155 210 M185 205 L210 205" stroke="#CD7F32" stroke-width="0.5" stroke-dasharray="3 3" opacity="0.3"/>
+        </svg>
+      </div>
+      <div class="masonry-item-overlay">
+        <div class="masonry-item-cat">Candid Joy</div>
+        <div class="masonry-item-title">Little Ones' Wonder</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── VIDEO REEL STRIP ─── -->
+<div class="video-strip">
+  <div class="video-strip-inner">
+    <div class="section-label reveal">Our Films</div>
+    <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Wedding <em>Cinematic Reels</em></h2>
+    <p class="reveal" style="color:var(--gray-mid);font-size:0.9rem;font-weight:300;margin-bottom:0;">Every story deserves a film as beautiful as the day itself</p>
+    <div class="video-grid">
+      <div class="video-card reveal" onclick="openLightbox('Wedding Film Priya & Arjun','Cinematic Wedding Film')">
+        <div class="video-card-img">
+          <div class="photo-art" style="--ar:16/9;">
+            <svg width="100%" height="100%" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+              <rect width="800" height="450" fill="#141414"/>
+              <rect x="0" y="0" width="800" height="60" fill="rgba(0,0,0,0.5)"/>
+              <rect x="0" y="390" width="800" height="60" fill="rgba(0,0,0,0.5)"/>
+              <path d="M200 225 L600 225" stroke="#CD7F32" stroke-width="0.5" opacity="0.2"/>
+              <ellipse cx="400" cy="225" rx="180" ry="120" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+              <ellipse cx="350" cy="235" rx="22" ry="60" fill="rgba(205,127,50,0.12)"/>
+              <circle cx="350" cy="165" r="18" fill="rgba(205,127,50,0.2)"/>
+              <ellipse cx="420" cy="240" rx="22" ry="60" fill="rgba(205,127,50,0.12)"/>
+              <circle cx="420" cy="170" r="18" fill="rgba(205,127,50,0.2)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="video-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-card-info"><h4>Priya & Arjun — Wedding Film</h4><p>Cinematic · 8 min</p></div>
+      </div>
+      <div class="video-card reveal reveal-delay-1" onclick="openLightbox('Highlight Reel','Same Day Edit')">
+        <div class="video-card-img">
+          <div class="photo-art" style="--ar:16/9;">
+            <svg width="100%" height="100%" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+              <rect width="800" height="450" fill="#141414"/>
+              <rect x="0" y="0" width="800" height="50" fill="rgba(0,0,0,0.5)"/>
+              <rect x="0" y="400" width="800" height="50" fill="rgba(0,0,0,0.5)"/>
+              <circle cx="400" cy="225" r="100" fill="rgba(205,127,50,0.06)"/>
+              <circle cx="400" cy="225" r="60" fill="rgba(205,127,50,0.08)"/>
+              <path d="M370 210 L430 225 L370 240Z" fill="rgba(205,127,50,0.3)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="video-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-card-info"><h4>Meera & Rahul — Highlight</h4><p>Same Day Edit · 4 min</p></div>
+      </div>
+      <div class="video-card reveal reveal-delay-2" onclick="openLightbox('Pre-Wedding Film','Pre-Wedding Shoot')">
+        <div class="video-card-img">
+          <div class="photo-art" style="--ar:16/9;">
+            <svg width="100%" height="100%" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+              <rect width="800" height="450" fill="#141414"/>
+              <rect x="0" y="0" width="800" height="50" fill="rgba(0,0,0,0.5)"/>
+              <rect x="0" y="400" width="800" height="50" fill="rgba(0,0,0,0.5)"/>
+              <path d="M0 250 Q400 200 800 250 L800 450 L0 450Z" fill="rgba(205,127,50,0.05)"/>
+              <ellipse cx="380" cy="220" rx="22" ry="60" fill="rgba(205,127,50,0.12)"/>
+              <circle cx="380" cy="150" r="18" fill="rgba(205,127,50,0.2)"/>
+              <ellipse cx="420" cy="224" rx="18" ry="55" fill="rgba(205,127,50,0.1)"/>
+              <circle cx="420" cy="158" r="16" fill="rgba(205,127,50,0.18)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="video-play-btn"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div>
+        <div class="video-card-info"><h4>Divya & Sid — Pre-Wedding</h4><p>Pre-Wedding Film · 5 min</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── BEFORE/AFTER TRANSFORMATION ─── -->
+<div class="ba-section">
+  <div class="ba-inner">
+    <div class="section-label reveal">Transformations</div>
+    <h2 class="section-title reveal">Venue <em>Transformations</em></h2>
+    <p class="reveal" style="color:var(--gray-mid);font-size:0.9rem;max-width:500px;line-height:1.8;margin-top:0.5rem;">From bare halls to breathtaking ballrooms — watch how we transform every space into something extraordinary.</p>
+    <div class="ba-grid">
+      <div class="ba-card reveal">
+        <div class="ba-top">
+          <div class="ba-half">
+            <div class="ba-label before">Before</div>
+            <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+              <rect width="80" height="80" fill="none" stroke="#666" stroke-width="1"/>
+              <rect x="10" y="10" width="60" height="60" fill="rgba(100,100,100,0.1)" stroke="#555" stroke-width="0.5"/>
+            </svg>
+            <p style="font-size:0.75rem;color:var(--gray-mid);margin-top:0.5rem;">Empty Banquet Hall</p>
+          </div>
+          <div class="ba-half after">
+            <div class="ba-label after">After</div>
+            <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.8">
+              <rect width="80" height="80" fill="none" stroke="#CD7F32" stroke-width="0.5" opacity="0.3"/>
+              <circle cx="40" cy="20" r="18" fill="rgba(205,127,50,0.2)" stroke="#CD7F32" stroke-width="0.75"/>
+              <circle cx="40" cy="20" r="10" fill="rgba(205,127,50,0.3)"/>
+              <rect x="15" y="50" width="50" height="25" rx="2" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.5"/>
+            </svg>
+            <p style="font-size:0.75rem;color:var(--bronze-light);margin-top:0.5rem;">Lakshyah Magic</p>
+          </div>
+        </div>
+        <div class="ba-bottom"><h4>Grand Ballroom — Kochi</h4><p>Hall transformed into a royal venue for 500 guests</p></div>
+      </div>
+      <div class="ba-card reveal reveal-delay-1">
+        <div class="ba-top">
+          <div class="ba-half">
+            <div class="ba-label before">Before</div>
+            <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+              <path d="M5 75 Q40 40 75 75Z" fill="rgba(60,100,40,0.15)" stroke="#555" stroke-width="0.5"/>
+              <circle cx="40" cy="30" r="20" fill="rgba(60,100,40,0.1)" stroke="#555" stroke-width="0.5"/>
+            </svg>
+            <p style="font-size:0.75rem;color:var(--gray-mid);margin-top:0.5rem;">Open Garden</p>
+          </div>
+          <div class="ba-half after">
+            <div class="ba-label after">After</div>
+            <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.8">
+              <path d="M15 80 L15 40 Q40 15 65 40 L65 80" stroke="#CD7F32" stroke-width="1" fill="rgba(205,127,50,0.08)"/>
+              <circle cx="15" cy="40" r="12" fill="rgba(205,127,50,0.25)"/>
+              <circle cx="65" cy="40" r="12" fill="rgba(205,127,50,0.25)"/>
+              <circle cx="40" cy="18" r="10" fill="rgba(205,127,50,0.3)"/>
+            </svg>
+            <p style="font-size:0.75rem;color:var(--bronze-light);margin-top:0.5rem;">Floral Wonderland</p>
+          </div>
+        </div>
+        <div class="ba-bottom"><h4>Garden Venue — Palakkad</h4><p>Wild garden into an enchanted floral paradise</p></div>
+      </div>
+      <div class="ba-card reveal reveal-delay-2">
+        <div class="ba-top">
+          <div class="ba-half">
+            <div class="ba-label before">Before</div>
+            <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.3">
+              <rect x="10" y="20" width="60" height="50" fill="rgba(100,100,100,0.08)" stroke="#555" stroke-width="0.5"/>
+              <path d="M10 20 L40 0 L70 20" fill="rgba(100,100,100,0.1)" stroke="#555" stroke-width="0.5"/>
+            </svg>
+            <p style="font-size:0.75rem;color:var(--gray-mid);margin-top:0.5rem;">Plain Tent Structure</p>
+          </div>
+          <div class="ba-half after">
+            <div class="ba-label after">After</div>
+            <svg width="80" height="80" viewBox="0 0 80 80" opacity="0.8">
+              <rect x="5" y="30" width="70" height="45" fill="rgba(205,127,50,0.06)" stroke="#CD7F32" stroke-width="0.75"/>
+              <path d="M5 30 L40 8 L75 30" fill="rgba(205,127,50,0.1)" stroke="#CD7F32" stroke-width="0.75"/>
+              <g fill="#CD7F32" opacity="0.4">
+                <circle cx="20" cy="30" r="5"/>
+                <circle cx="40" cy="22" r="6"/>
+                <circle cx="60" cy="30" r="5"/>
+              </g>
+              <path d="M10 30 Q40 22 70 30" stroke="#CD7F32" stroke-width="0.5" stroke-dasharray="3 2" opacity="0.5"/>
+            </svg>
+            <p style="font-size:0.75rem;color:var(--bronze-light);margin-top:0.5rem;">Regal Floral Tent</p>
+          </div>
+        </div>
+        <div class="ba-bottom"><h4>Outdoor Tent — Thrissur</h4><p>Simple shamiana becomes a luxurious floral marquee</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── CTA ─── -->
+<section class="gallery-cta">
+  <span class="script">Your Story Awaits</span>
+  <h2>Ready to Create <em>Your Gallery?</em></h2>
+  <p>Every photo you've seen here represents a real love story. Let us help you write yours — and immortalise it in images this beautiful.</p>
+  <div class="cta-btns reveal">
+    <a href="booking.html" class="btn-primary"><span>Book a Consultation</span></a>
+    <a href="packages.html" class="btn-outline">View Packages</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand-script">Lakshyah</span>
+      <p class="footer-tagline">Crafting timeless weddings with elegance, love, and meticulous artistry across Kerala and beyond.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Wedding Planning</a></li>
+        <li><a href="services.html">Decor & Florals</a></li>
+        <li><a href="services.html">Catering</a></li>
+        <li><a href="services.html">Photography</a></li>
+        <li><a href="services.html">Entertainment</a></li>
+        <li><a href="services.html">Mehendi & Beauty</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <h4>Contact</h4>
+      <p>Nenmara, Palakkad<br>Kerala, India — 678508</p>
+      <p>+91 98765 43210<br>hello@lakshyah.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Lakshyah Wedding Planners. All rights reserved.</span>
+    <span>Crafted with <span style="color:var(--bronze)">♥</span> in Kerala</span>
+  </div>
+</footer>
+
+<!-- ─── LIGHTBOX ─── -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLightbox()">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8592;</button>
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8594;</button>
+    <div class="lightbox-mock" id="lightboxMock">
+      <svg width="120" height="120" viewBox="0 0 120 120" opacity="0.4">
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#CD7F32" stroke-width="1"/>
+        <circle cx="60" cy="60" r="35" fill="none" stroke="#CD7F32" stroke-width="0.75"/>
+        <path d="M35 85 Q60 50 85 85" stroke="#CD7F32" stroke-width="1" fill="none"/>
+        <circle cx="60" cy="45" r="12" fill="rgba(205,127,50,0.3)"/>
+      </svg>
+      <p style="color:var(--gray-mid);font-size:0.8rem;text-align:center;font-weight:300;line-height:1.7;">Add your actual photos here by replacing<br>the SVG placeholders with &lt;img&gt; tags</p>
+    </div>
+    <div class="lightbox-info">
+      <h3 id="lightboxTitle">Photo Title</h3>
+      <p id="lightboxCat">Category</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FLOATING BUTTONS ─── -->
+<a class="float-whatsapp" href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<script>
+// ─── NAVBAR SCROLL ───
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+  triggerReveal();
+});
+
+// ─── HAMBURGER ───
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const ham = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  ham.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─── REVEAL ───
+function triggerReveal() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) el.classList.add('visible');
+  });
+}
+setTimeout(triggerReveal, 200);
+window.addEventListener('load', triggerReveal);
+
+// ─── FILTER GALLERY ───
+function filterGallery(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.remove('hidden');
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+}
+
+// ─── LIGHTBOX ───
+let currentItems = [];
+let currentIndex = 0;
+
+function openLightbox(title, cat) {
+  document.getElementById('lightboxTitle').textContent = title;
+  document.getElementById('lightboxCat').textContent = cat;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function navLightbox(dir) {
+  // Placeholder navigation
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>

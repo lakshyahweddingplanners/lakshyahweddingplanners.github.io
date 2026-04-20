@@ -1,0 +1,2169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lakshyah Wedding Planners – Explore our curated wedding packages designed for every dream and every budget. Kerala's finest wedding planning experience.">
+<title>Packages | Lakshyah Wedding Planners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bronze: #B86B45;
+  --bronze-light: #D08A5C;
+  --bronze-dark: #7A3E26;
+  --black: #0A0A0A;
+  --black-soft: #111111;
+  --black-card: #141414;
+  --white: #FAFAFA;
+  --off-white: #F5F0E8;
+  --gray-mid: #8A7F73;
+  --gray-light: #E8E4DC;
+  --transition: all 0.4s ease;
+  --transition-fast: all 0.25s ease;
+}
+
+.bronze-text {
+  background: linear-gradient(135deg, #8C4A1E, #CD7F32, #E0A96D, #CD7F32, #8C4A1E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--bronze-dark); border-radius: 2px; }
+::selection { background: var(--bronze); color: var(--black); }
+
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+.script { font-family: 'Great Vibes', cursive; }
+
+/* ─── GOLD DIVIDER ─── */
+.gold-divider {
+  display: flex; align-items: center; gap: 1rem; margin: 1rem auto;
+}
+.gold-divider::before, .gold-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+}
+.gold-divider span { color: var(--bronze); font-size: 18px; }
+
+.section-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px; font-weight: 300;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--bronze); margin-bottom: 0.5rem;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300; line-height: 1.1; color: var(--white);
+}
+.section-title em { font-style: italic; color: var(--bronze-light); }
+
+/* ─── NAVBAR ─── */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1.2rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: var(--transition);
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(205,127,50,0.12);
+}
+#navbar.scrolled {
+  background: rgba(10,10,10,0.98);
+  padding: 0.7rem 4rem;
+  border-bottom: 1px solid rgba(205,127,50,0.25);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.nav-logo { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; }
+.nav-logo img { max-height: 70px; width: auto; object-fit: contain; transition: max-height 0.4s ease; }
+#navbar.scrolled .nav-logo img { max-height: 70px; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(250,250,250,0.75); text-decoration: none;
+  transition: var(--transition-fast); position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 1px; background: var(--bronze); transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover { color: var(--bronze-light); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-links a.active { color: var(--bronze-light); }
+.nav-cta {
+  background: transparent !important;
+  border: 1px solid var(--bronze) !important;
+  color: var(--bronze) !important;
+  padding: 0.5rem 1.5rem !important;
+  letter-spacing: 2px !important;
+}
+.nav-cta:hover { background: var(--bronze) !important; color: var(--black) !important; }
+.nav-cta::after { display: none !important; }
+
+/* ─── HAMBURGER ─── */
+.hamburger {
+  display: none; flex-direction: column;
+  justify-content: center; align-items: center;
+  cursor: pointer; background: none;
+  border: 1px solid rgba(205,127,50,0.3);
+  border-radius: 4px; width: 44px; height: 44px;
+  padding: 0; position: relative; transition: border-color 0.3s ease;
+}
+.hamburger:hover { border-color: rgba(205,127,50,0.7); }
+.hamburger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--bronze-light); border-radius: 2px;
+  position: absolute; transition: all 0.35s cubic-bezier(0.23,1,0.32,1);
+}
+.hamburger span:nth-child(1) { top: 14px; }
+.hamburger span:nth-child(2) { top: 21px; width: 14px; }
+.hamburger span:nth-child(3) { top: 28px; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 21px; }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: translateX(8px); }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 21px; }
+
+/* ─── MOBILE MENU ─── */
+.mobile-menu {
+  display: none; opacity: 0;
+  position: fixed; inset: 0;
+  background: rgba(10,10,10,0.98);
+  backdrop-filter: blur(20px);
+  flex-direction: column; align-items: center; justify-content: center;
+  gap: 0; z-index: 1100; transition: opacity 0.4s ease, visibility 0.4s ease;
+  visibility: hidden;
+}
+.mobile-menu.open { display: flex; opacity: 1; visibility: visible; }
+.mobile-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300;
+  color: rgba(250,250,250,0.7); text-decoration: none;
+  letter-spacing: 3px; padding: 0.6rem 2rem;
+  transition: all 0.3s ease; text-align: center;
+}
+.mobile-menu a:hover { color: var(--bronze-light); }
+
+/* ─── BUTTONS ─── */
+.btn-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #8C4A1E, #CD7F32);
+  color: var(--black);
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition);
+  position: relative; overflow: hidden; cursor: pointer; border: none;
+  box-shadow: 0 4px 20px rgba(205,127,50,0.25);
+}
+.btn-primary:hover { background: linear-gradient(135deg, #CD7F32, #E0A96D); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(205,127,50,0.35); }
+.btn-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 1rem 2.5rem;
+  border: 1px solid rgba(201,168,76,0.5);
+  color: var(--bronze-light);
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300;
+  letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition-fast);
+  cursor: pointer; background: none;
+}
+.btn-outline:hover {
+  border-color: var(--bronze);
+  background: rgba(201,168,76,0.08); color: var(--bronze);
+}
+
+/* ─── REVEAL ANIMATIONS ─── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+.ornament-line {
+  display: flex; align-items: center; gap: 1rem; margin: 2rem 0;
+}
+.ornament-line::before, .ornament-line::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+.ornament-diamond { color: var(--bronze); font-size: 0.5rem; }
+
+/* ─── HERO ─── */
+.packages-hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; padding: 0 4rem;
+}
+.hero-bg-layer {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 50%, rgba(205,127,50,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(140,74,30,0.07) 0%, transparent 50%),
+    linear-gradient(180deg, #060504 0%, #0d0c0a 50%, #060504 100%);
+}
+.hero-grid-pattern {
+  position: absolute; inset: 0; opacity: 0.025;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.6) 59px, rgba(201,168,76,0.6) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.6) 59px, rgba(201,168,76,0.6) 60px);
+}
+.hero-rings {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.hero-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.07);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  animation: pulse-ring 5s ease-in-out infinite;
+}
+.hero-ring:nth-child(1) { width: 700px; height: 700px; }
+.hero-ring:nth-child(2) { width: 520px; height: 520px; animation-delay: 1.2s; }
+.hero-ring:nth-child(3) { width: 340px; height: 340px; animation-delay: 2.4s; }
+@keyframes pulse-ring {
+  0%,100% { opacity: 0.4; transform: translate(-50%,-50%) scale(1); }
+  50% { opacity: 0.1; transform: translate(-50%,-50%) scale(1.04); }
+}
+.hero-deco-left {
+  position: absolute; left: 6%; top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.07; pointer-events: none;
+  animation: float-deco 8s ease-in-out infinite;
+}
+.hero-deco-right {
+  position: absolute; right: 6%; top: 45%;
+  transform: translateY(-50%);
+  opacity: 0.07; pointer-events: none;
+  animation: float-deco 8s 3s ease-in-out infinite;
+}
+@keyframes float-deco {
+  0%,100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 15px)); }
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center;
+  max-width: 900px;
+}
+.hero-eyebrow {
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 300;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--bronze); margin-bottom: 1rem;
+  animation: fadeUp 1s 0.2s ease both;
+}
+.hero-script-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(4rem, 10vw, 9rem);
+  color: var(--bronze-light);
+  line-height: 1.3; padding: 0.1em 0;
+  display: block;
+  text-shadow: 0 0 60px rgba(201,168,76,0.15);
+  animation: fadeUp 1.2s 0.4s ease both;
+}
+.hero-main-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 300; color: var(--white);
+  line-height: 1.2; margin: 0.5rem 0 2rem;
+  animation: fadeUp 1.2s 0.6s ease both;
+}
+.hero-main-title em { font-style: italic; color: var(--bronze-light); }
+.hero-description {
+  font-family: 'Jost', sans-serif; font-size: 0.95rem;
+  font-weight: 300; color: rgba(250,250,250,0.55);
+  line-height: 1.9; max-width: 580px; margin: 0 auto 2.5rem;
+  animation: fadeUp 1.2s 0.8s ease both;
+}
+.hero-ctas {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; flex-wrap: wrap;
+  animation: fadeUp 1.2s 1s ease both;
+}
+.hero-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 3rem; margin-top: 4rem;
+  animation: fadeUp 1.2s 1.2s ease both;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem; font-weight: 300;
+  color: var(--bronze-light); display: block; line-height: 1;
+}
+.hero-stat-label {
+  font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gray-mid);
+  margin-top: 0.3rem; display: block;
+}
+.hero-stat-divider {
+  width: 1px; height: 50px;
+  background: linear-gradient(180deg, transparent, rgba(201,168,76,0.3), transparent);
+}
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  animation: fadeUp 1s 1.5s ease both;
+}
+.hero-scroll span {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(250,250,250,0.4); font-weight: 300;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(180deg, var(--bronze), transparent);
+  animation: scrollDown 1.5s ease-in-out infinite;
+}
+@keyframes scrollDown {
+  0% { opacity: 1; transform: scaleY(1) translateY(0); }
+  100% { opacity: 0; transform: scaleY(0.5) translateY(20px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── PHILOSOPHY STRIP ─── */
+.philosophy-strip {
+  padding: 5rem 4rem;
+  background: var(--black-soft);
+  position: relative; overflow: hidden;
+}
+.philosophy-strip::before {
+  content: 'Packages';
+  position: absolute; right: -1rem; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12rem; font-weight: 700;
+  color: rgba(201,168,76,0.025);
+  white-space: nowrap; pointer-events: none;
+}
+.philosophy-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 2px 1fr 2px 1fr;
+  gap: 3rem; align-items: center;
+}
+.philosophy-divider {
+  background: linear-gradient(180deg, transparent, rgba(201,168,76,0.3), transparent);
+  height: 80px; align-self: center;
+}
+.philosophy-item { text-align: center; }
+.philosophy-icon {
+  font-size: 2rem; color: var(--bronze); margin-bottom: 1rem; display: block;
+}
+.philosophy-item h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 400;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.philosophy-item p {
+  font-size: 0.82rem; color: var(--gray-mid);
+  line-height: 1.8; font-weight: 300;
+}
+
+/* ─── SECTION PADDING ─── */
+.section-inner { max-width: 1300px; margin: 0 auto; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header p.section-desc {
+  font-size: 0.9rem; color: rgba(250,250,250,0.5);
+  font-weight: 300; line-height: 1.8; max-width: 560px;
+  margin: 1rem auto 0;
+}
+
+/* ─── TAB SELECTOR ─── */
+.pkg-tabs-wrapper {
+  padding: 5rem 4rem 0;
+}
+.pkg-tabs {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap; margin-top: 3rem;
+  border: 1px solid rgba(201,168,76,0.2);
+  display: inline-flex; left: 50%; transform: translateX(-50%);
+  position: relative;
+}
+.pkg-tab {
+  padding: 0.8rem 2rem;
+  background: transparent; border: none;
+  border-right: 1px solid rgba(201,168,76,0.15);
+  color: rgba(250,250,250,0.45);
+  font-family: 'Jost', sans-serif; font-size: 11px;
+  font-weight: 300; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; transition: all 0.3s ease;
+}
+.pkg-tab:last-child { border-right: none; }
+.pkg-tab:hover { color: var(--bronze-light); background: rgba(201,168,76,0.04); }
+.pkg-tab.active {
+  color: var(--black); background: var(--bronze);
+  font-weight: 500;
+}
+.pkg-tabs-center { text-align: center; }
+
+/* ─── MAIN PACKAGES GRID ─── */
+.main-packages {
+  padding: 5rem 4rem;
+}
+.pkg-section { display: none; }
+.pkg-section.active { display: block; }
+
+/* ─── PACKAGE OVERVIEW HEADER ─── */
+.pkg-overview {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+  align-items: center; margin-bottom: 5rem;
+  padding: 4rem; background: var(--black-soft);
+  border: 1px solid rgba(201,168,76,0.1);
+  position: relative; overflow: hidden;
+}
+.pkg-overview::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, transparent, var(--bronze), transparent);
+}
+.pkg-overview-img {
+  aspect-ratio: 4/3; background: var(--black-card);
+  border: 1px solid rgba(201,168,76,0.1);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; position: relative; overflow: hidden;
+}
+.pkg-overview-img::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 60%);
+}
+.pkg-overview-img-icon {
+  font-size: 4rem; color: rgba(201,168,76,0.2);
+}
+.pkg-overview-img-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem; color: rgba(201,168,76,0.25);
+}
+.pkg-overview-content .section-label { margin-bottom: 0.75rem; }
+.pkg-overview-content h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300; margin-bottom: 1rem;
+}
+.pkg-overview-content h2 em { font-style: italic; color: var(--bronze-light); }
+.pkg-overview-content p {
+  font-size: 0.9rem; line-height: 1.9;
+  color: rgba(250,250,250,0.6); font-weight: 300; margin-bottom: 1rem;
+}
+.pkg-ideal {
+  margin-top: 1.5rem; padding: 1.2rem 1.5rem;
+  border-left: 2px solid var(--bronze);
+  background: rgba(201,168,76,0.04);
+}
+.pkg-ideal-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bronze); font-weight: 400; margin-bottom: 0.4rem;
+}
+.pkg-ideal p {
+  font-size: 0.82rem; color: rgba(250,250,250,0.55);
+  margin-bottom: 0; line-height: 1.6;
+}
+
+/* ─── TIERS GRID ─── */
+.tiers-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: rgba(201,168,76,0.1);
+  margin-bottom: 6rem;
+}
+
+.tier-card {
+  background: var(--black-soft);
+  padding: 3.5rem 2.5rem;
+  text-align: center; position: relative;
+  transition: background 0.4s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+.tier-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(201,168,76,0.02);
+  transform: translateY(100%); transition: transform 0.5s ease;
+}
+.tier-card:hover::before { transform: translateY(0); }
+
+.tier-card.featured {
+  background: var(--black-card);
+  border-top: 2px solid var(--bronze);
+  transform: scaleY(1.02);
+  z-index: 2;
+}
+.tier-badge {
+  display: inline-block;
+  padding: 0.3rem 1.2rem;
+  background: var(--bronze);
+  color: var(--black);
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; font-weight: 500;
+  margin-bottom: 1.8rem;
+}
+.tier-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.8rem; color: var(--white);
+  line-height: 1.2; margin-bottom: 0.5rem;
+}
+.tier-subtitle {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gray-mid); margin-bottom: 2rem;
+}
+.tier-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.8rem; font-weight: 300;
+  color: var(--bronze-light); line-height: 1;
+}
+.tier-card.featured .tier-price { color: var(--bronze); }
+.tier-price-note {
+  font-size: 11px; letter-spacing: 2px; color: var(--gray-mid);
+  margin: 0.5rem 0 2.5rem; text-transform: uppercase;
+}
+.tier-divider {
+  height: 1px; background: rgba(201,168,76,0.15);
+  margin: 0 -2.5rem 2.5rem;
+}
+.tier-features {
+  list-style: none; text-align: left; margin-bottom: 2.5rem;
+}
+.tier-features li {
+  padding: 0.65rem 0;
+  font-size: 0.85rem; color: rgba(250,250,250,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: flex-start; gap: 0.75rem;
+  line-height: 1.4;
+}
+.tier-features li::before {
+  content: '◆'; color: var(--bronze);
+  font-size: 6px; flex-shrink: 0; margin-top: 5px;
+}
+.tier-features li.excluded {
+  opacity: 0.35; text-decoration: line-through;
+}
+.tier-features li.excluded::before {
+  content: '◇'; color: var(--gray-mid);
+}
+.tier-cta {
+  display: block; width: 100%;
+  padding: 1rem; text-align: center;
+  font-family: 'Jost', sans-serif; font-size: 11px;
+  font-weight: 400; letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition-fast);
+  cursor: pointer; border: 1px solid rgba(201,168,76,0.4);
+  color: var(--bronze-light); background: transparent;
+}
+.tier-cta:hover { background: rgba(201,168,76,0.08); border-color: var(--bronze); color: var(--bronze); }
+.tier-card.featured .tier-cta {
+  background: linear-gradient(135deg, #8C4A1E, #CD7F32);
+  border-color: transparent; color: var(--black);
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(205,127,50,0.3);
+}
+.tier-card.featured .tier-cta:hover {
+  background: linear-gradient(135deg, #CD7F32, #E0A96D);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(205,127,50,0.4);
+}
+
+/* ─── GRAND WEDDING PACKAGE (MAIN SHOWCASE) ─── */
+.grand-package {
+  padding: 5rem 4rem;
+  background: var(--black-soft);
+  position: relative; overflow: hidden;
+}
+.grand-package::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.04) 0%, transparent 60%);
+}
+.grand-package-inner {
+  max-width: 1200px; margin: 0 auto; position: relative;
+}
+.grand-tiers {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 0; margin-top: 4rem;
+  border: 1px solid rgba(201,168,76,0.15);
+}
+.grand-tier {
+  padding: 3rem 2.5rem;
+  border-right: 1px solid rgba(201,168,76,0.1);
+  position: relative; transition: background 0.4s;
+}
+.grand-tier:last-child { border-right: none; }
+.grand-tier:hover { background: rgba(201,168,76,0.02); }
+.grand-tier.featured-grand {
+  background: rgba(201,168,76,0.04);
+  border-top: 2px solid var(--bronze);
+}
+.grand-tier-label {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--bronze); font-weight: 300; margin-bottom: 0.5rem;
+}
+.grand-tier h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem; color: var(--white); margin-bottom: 0.25rem;
+}
+.grand-tier-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 300;
+  color: var(--bronze-light); margin: 1rem 0;
+}
+.grand-tier-desc {
+  font-size: 0.82rem; color: rgba(250,250,250,0.45);
+  line-height: 1.7; font-weight: 300; margin-bottom: 1.5rem;
+}
+.grand-features {
+  list-style: none; margin-bottom: 2rem;
+}
+.grand-features li {
+  padding: 0.5rem 0;
+  font-size: 0.82rem; color: rgba(250,250,250,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.grand-features li::before {
+  content: '◆'; color: var(--bronze); font-size: 5px; flex-shrink: 0;
+}
+.grand-cta {
+  display: inline-block;
+  padding: 0.75rem 1.8rem;
+  font-family: 'Jost', sans-serif; font-size: 10px;
+  font-weight: 300; letter-spacing: 3px; text-transform: uppercase;
+  text-decoration: none; transition: var(--transition-fast);
+  cursor: pointer; border: 1px solid rgba(201,168,76,0.35);
+  color: var(--bronze-light); background: transparent;
+}
+.grand-cta:hover { border-color: var(--bronze); background: rgba(201,168,76,0.06); color: var(--bronze); }
+.grand-featured-badge {
+  position: absolute; top: 0; right: 1.5rem;
+  background: var(--bronze);
+  color: var(--black);
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase; font-weight: 500;
+  padding: 0.3rem 0.9rem;
+}
+
+/* ─── COMPARISON TABLE ─── */
+.comparison-section {
+  padding: 6rem 4rem;
+}
+.comparison-table-wrap {
+  overflow-x: auto; margin-top: 3.5rem;
+}
+.comparison-table {
+  width: 100%; border-collapse: collapse;
+  font-family: 'Jost', sans-serif;
+}
+.comparison-table th {
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: center; background: var(--black-soft);
+  border-bottom: 2px solid rgba(201,168,76,0.2);
+  font-weight: 300;
+}
+.comparison-table th:first-child { text-align: left; }
+.comparison-table th .col-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 300; color: var(--white);
+  display: block;
+}
+.comparison-table th .col-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 300;
+  color: var(--bronze-light); display: block; margin-top: 0.25rem;
+}
+.comparison-table th.featured-col {
+  background: var(--black-card);
+  border-top: 2px solid var(--bronze);
+}
+.comparison-table th.featured-col .col-name { color: var(--bronze-light); }
+.comparison-table td {
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.85rem; color: rgba(250,250,250,0.55);
+  transition: background 0.3s;
+}
+.comparison-table tr:hover td { background: rgba(201,168,76,0.02); }
+.comparison-table td:first-child {
+  text-align: left; color: rgba(250,250,250,0.7);
+  font-weight: 300;
+}
+.comparison-table td.featured-col { background: rgba(201,168,76,0.025); }
+.comparison-table .check { color: var(--bronze); font-size: 1rem; }
+.comparison-table .cross { color: rgba(255,255,255,0.15); font-size: 1rem; }
+.comparison-table .partial { color: var(--bronze-light); font-size: 0.75rem; letter-spacing: 1px; }
+.comparison-table .cat-row td {
+  padding: 1.5rem 1.5rem 0.5rem;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bronze); font-weight: 400; background: var(--black-soft);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.comparison-table .cat-row td:first-child { text-align: left; }
+
+/* ─── ADD-ONS ─── */
+.addons-section {
+  padding: 6rem 4rem;
+  background: var(--black-soft);
+}
+.addons-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 2px; background: rgba(201,168,76,0.1);
+  margin-top: 3.5rem;
+}
+.addon-card {
+  background: var(--black-soft);
+  padding: 2.5rem 2rem; text-align: center;
+  transition: background 0.4s;
+  position: relative; overflow: hidden;
+}
+.addon-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+  transform: scaleX(0); transition: transform 0.4s;
+}
+.addon-card:hover::after { transform: scaleX(1); }
+.addon-card:hover { background: rgba(201,168,76,0.03); }
+.addon-icon {
+  font-size: 2rem; color: var(--bronze); margin-bottom: 1rem; display: block;
+}
+.addon-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 400; color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.addon-desc {
+  font-size: 0.8rem; color: var(--gray-mid);
+  line-height: 1.7; font-weight: 300; margin-bottom: 1rem;
+}
+.addon-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 300;
+  color: var(--bronze-light);
+}
+.addon-price small {
+  font-family: 'Jost', sans-serif;
+  font-size: 10px; color: var(--gray-mid);
+  display: block; letter-spacing: 1px; margin-top: 0.2rem;
+}
+
+/* ─── PROCESS ─── */
+.process-section {
+  padding: 6rem 4rem;
+}
+.process-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 0; margin-top: 4rem; position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 2.2rem; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.25), rgba(201,168,76,0.25), transparent);
+}
+.process-step { text-align: center; padding: 0 1rem; }
+.process-num {
+  width: 45px; height: 45px;
+  border: 1px solid rgba(201,168,76,0.4);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 300; color: var(--bronze-light);
+  margin: 0 auto 1.5rem; background: var(--black);
+  position: relative; z-index: 1; transition: var(--transition-fast);
+}
+.process-step:hover .process-num {
+  background: var(--bronze); color: var(--black);
+  border-color: var(--bronze);
+}
+.process-step h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 400; color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.process-step p {
+  font-size: 0.8rem; color: var(--gray-mid);
+  line-height: 1.7; font-weight: 300;
+}
+
+/* ─── TESTIMONIALS STRIP ─── */
+.testi-strip {
+  padding: 5rem 4rem;
+  background: var(--black-soft);
+}
+.testi-strip-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+.testi-strip-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: rgba(201,168,76,0.1); margin-top: 3.5rem;
+}
+.testi-mini {
+  background: var(--black-soft);
+  padding: 2.5rem 2rem; position: relative;
+  transition: background 0.4s;
+}
+.testi-mini:hover { background: var(--black-card); }
+.testi-mini::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; color: rgba(201,168,76,0.07);
+  position: absolute; top: -0.5rem; left: 1.5rem; line-height: 1;
+}
+.testi-stars { color: var(--bronze); font-size: 0.85rem; margin-bottom: 1rem; }
+.testi-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem; font-style: italic;
+  line-height: 1.8; color: rgba(250,250,250,0.75);
+  margin-bottom: 1.5rem;
+}
+.testi-author-name {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--bronze-light);
+  font-weight: 300;
+}
+.testi-author-pkg {
+  font-size: 10px; letter-spacing: 1px;
+  color: var(--gray-mid); margin-top: 0.2rem;
+}
+
+/* ─── FAQ ─── */
+.faq-section {
+  padding: 6rem 4rem;
+}
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-items { margin-top: 3.5rem; }
+.faq-item {
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+}
+.faq-question {
+  width: 100%; padding: 1.5rem 0;
+  display: flex; align-items: center; justify-content: space-between;
+  background: none; border: none; cursor: pointer;
+  text-align: left; transition: var(--transition-fast);
+}
+.faq-question h3 {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.95rem; font-weight: 300;
+  color: rgba(250,250,250,0.8); letter-spacing: 0.5px;
+}
+.faq-question:hover h3 { color: var(--bronze-light); }
+.faq-icon {
+  color: var(--bronze); font-size: 1.2rem;
+  transition: transform 0.4s ease; flex-shrink: 0; margin-left: 1rem;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer p {
+  padding-bottom: 1.5rem;
+  font-size: 0.875rem; color: rgba(250,250,250,0.5);
+  line-height: 1.9; font-weight: 300;
+}
+
+/* ─── CTA BANNER ─── */
+.cta-banner {
+  padding: 7rem 4rem;
+  position: relative; overflow: hidden; text-align: center;
+  background: linear-gradient(135deg, #0a0806 0%, #141008 50%, #0a0806 100%);
+}
+.cta-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(140,74,30,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 55%);
+}
+.cta-banner-pattern {
+  position: absolute; inset: 0; opacity: 0.025;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 29px, rgba(201,168,76,0.5) 29px, rgba(201,168,76,0.5) 30px);
+}
+.cta-banner-content { position: relative; z-index: 2; }
+.cta-banner-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3rem, 7vw, 6rem);
+  color: var(--bronze-light); display: block;
+  line-height: 1.3; margin-bottom: 0.5rem;
+  text-shadow: 0 0 40px rgba(201,168,76,0.15);
+}
+.cta-banner h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 300; color: var(--white);
+  margin-bottom: 1.5rem; line-height: 1.2;
+}
+.cta-banner h2 em { font-style: italic; color: var(--bronze-light); }
+.cta-banner p {
+  font-size: 0.9rem; color: rgba(250,250,250,0.5);
+  font-weight: 300; line-height: 1.8; max-width: 520px;
+  margin: 0 auto 2.5rem;
+}
+.cta-banner-btns {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; flex-wrap: wrap;
+}
+.cta-banner-note {
+  margin-top: 2rem;
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray-mid);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: #050505;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  padding: 5rem 4rem 2rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 4rem; padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+}
+.footer-brand-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem; color: var(--bronze-light);
+  display: block; margin-bottom: 1rem;
+}
+.footer-tagline {
+  font-size: 0.8rem; color: var(--gray-mid);
+  line-height: 1.7; font-weight: 300; max-width: 260px;
+}
+.footer-col h4 {
+  font-family: 'Jost', sans-serif; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--bronze); margin-bottom: 1.5rem; font-weight: 400;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.75rem; }
+.footer-col ul li a {
+  font-size: 0.85rem; color: rgba(250,250,250,0.5);
+  text-decoration: none; font-weight: 300; transition: color 0.3s;
+}
+.footer-col ul li a:hover { color: var(--bronze-light); }
+.footer-contact-item {
+  display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem;
+}
+.footer-contact-item span:first-child { color: var(--bronze); font-size: 0.8rem; flex-shrink: 0; }
+.footer-contact-item span:last-child {
+  font-size: 0.8rem; color: rgba(250,250,250,0.5); line-height: 1.5; font-weight: 300;
+}
+.social-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
+.social-link {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(201,168,76,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(250,250,250,0.5); font-size: 0.8rem;
+  text-decoration: none; transition: var(--transition-fast);
+}
+.social-link:hover { border-color: var(--bronze); color: var(--bronze); background: rgba(201,168,76,0.08); }
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 2rem; flex-wrap: wrap; gap: 1rem;
+}
+.footer-copy { font-size: 11px; color: rgba(250,250,250,0.25); letter-spacing: 1px; font-weight: 300; }
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+.footer-bottom-links a {
+  font-size: 11px; color: rgba(250,250,250,0.25);
+  text-decoration: none; transition: color 0.3s; letter-spacing: 1px;
+}
+.footer-bottom-links a:hover { color: var(--bronze-light); }
+
+/* ─── FLOATING BUTTONS ─── */
+.float-whatsapp {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 56px; height: 56px; background: #25D366;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  z-index: 900; text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  transition: var(--transition-fast);
+  animation: floatIn 1s 2s ease both;
+}
+.float-whatsapp:hover { transform: scale(1.1); background: #1da851; }
+.float-whatsapp svg { width: 28px; height: 28px; fill: white; }
+.scroll-top-btn {
+  position: fixed; bottom: 2rem; left: 2rem;
+  width: 44px; height: 44px;
+  border: 1px solid rgba(201,168,76,0.4);
+  background: rgba(10,10,10,0.9);
+  display: none; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 900;
+  color: var(--bronze); font-size: 1rem;
+  transition: var(--transition-fast); backdrop-filter: blur(8px);
+}
+.scroll-top-btn.visible { display: flex; }
+.scroll-top-btn:hover { border-color: var(--bronze); background: rgba(201,168,76,0.1); }
+@keyframes floatIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1200px) {
+  .addons-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .process-steps::before { display: none; }
+}
+@media (max-width: 1024px) {
+  .philosophy-inner { grid-template-columns: 1fr; }
+  .philosophy-divider { display: none; }
+  .tiers-grid { grid-template-columns: 1fr; max-width: 450px; margin: 0 auto 4rem; }
+  .tier-card.featured { transform: none; }
+  .grand-tiers { grid-template-columns: 1fr; }
+  .grand-tier { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .pkg-overview { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pkg-overview-img { display: none; }
+  .testi-strip-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  #navbar { padding: 1.5rem 1.5rem; }
+  #navbar.scrolled { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .packages-hero { padding: 0 1.5rem; }
+  .hero-stats { gap: 1.5rem; }
+  .philosophy-strip, .main-packages, .grand-package, .comparison-section,
+  .addons-section, .process-section, .testi-strip, .faq-section, .cta-banner { padding: 4rem 1.5rem; }
+  .pkg-tabs-wrapper { padding: 3rem 1.5rem 0; }
+  .pkg-overview { padding: 2rem; }
+  .addons-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .testi-strip-grid { grid-template-columns: 1fr; }
+  footer { padding: 3rem 1.5rem 2rem; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .pkg-tab { padding: 0.7rem 1.2rem; font-size: 10px; }
+}
+@media (max-width: 480px) {
+  .hero-ctas { flex-direction: column; width: 100%; }
+  .hero-stats { flex-direction: column; gap: 1rem; }
+  .hero-stat-divider { display: none; }
+  .cta-banner-btns { flex-direction: column; }
+  .process-steps { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919447000000" class="float-whatsapp" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="about.html" onclick="closeMobileMenu()">About</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="gallery.html" onclick="closeMobileMenu()">Gallery</a>
+  <a href="packages.html" onclick="closeMobileMenu()">Packages</a>
+  <a href="testimonials.html" onclick="closeMobileMenu()">Testimonials</a>
+  <a href="booking.html" onclick="closeMobileMenu()" style="margin-top:2rem;padding:0.9rem 2.2rem;border:1px solid var(--bronze);color:var(--bronze);letter-spacing:2px;text-transform:uppercase;font-size:12px;text-decoration:none;display:inline-block;">Book Now</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="logo.png" alt="Lakshyah Wedding Planners">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="packages.html" class="active">Packages</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HERO -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="packages-hero">
+  <div class="hero-bg-layer"></div>
+  <div class="hero-grid-pattern"></div>
+  <div class="hero-rings">
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+  </div>
+
+  <!-- Left SVG deco -->
+  <svg class="hero-deco-left" width="140" height="200" viewBox="0 0 140 200" fill="none">
+    <path d="M70 10 L76 60 L126 60 L85 90 L100 140 L70 110 L40 140 L55 90 L14 60 L64 60 Z" stroke="#C9A84C" stroke-width="1" fill="none"/>
+    <circle cx="70" cy="75" r="8" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+    <line x1="70" y1="160" x2="70" y2="200" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+    <line x1="50" y1="180" x2="90" y2="180" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+  </svg>
+
+  <!-- Right SVG deco -->
+  <svg class="hero-deco-right" width="100" height="160" viewBox="0 0 100 160" fill="none">
+    <circle cx="50" cy="50" r="45" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
+    <circle cx="50" cy="50" r="30" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+    <circle cx="50" cy="50" r="15" stroke="#C9A84C" stroke-width="0.4" fill="none"/>
+    <line x1="5" y1="50" x2="95" y2="50" stroke="#C9A84C" stroke-width="0.4"/>
+    <line x1="50" y1="5" x2="50" y2="95" stroke="#C9A84C" stroke-width="0.4"/>
+    <path d="M50 110 L50 160 M35 140 L65 140" stroke="#C9A84C" stroke-width="0.5"/>
+  </svg>
+
+  <div class="hero-content">
+    <h1 class="hero-main-title">
+      An Experience Curated<br><em>Just for You</em>
+    </h1>
+    <p class="hero-description">
+      From intimate gatherings draped in quiet elegance to grand celebrations that fill a thousand hearts with joy — every Lakshyah package is a promise, thoughtfully woven to honour your unique love story.
+    </p>
+    <div class="hero-ctas">
+      <a href="booking.html" class="btn-primary">Book a Consultation</a>
+      <a href="#packages" class="btn-outline">Explore Packages</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">500+</span>
+        <span class="hero-stat-label">Weddings Crafted</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">12+</span>
+        <span class="hero-stat-label">Years of Excellence</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">98%</span>
+        <span class="hero-stat-label">Client Delight Rate</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PHILOSOPHY STRIP -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="philosophy-strip">
+  <div class="philosophy-inner section-inner">
+    <div class="philosophy-item reveal">
+      <span class="philosophy-icon">◈</span>
+      <h3>Transparent Pricing</h3>
+      <p>No hidden costs, no surprises. Every rupee in every package is accounted for, so you plan with complete peace of mind.</p>
+    </div>
+    <div class="philosophy-divider reveal"></div>
+    <div class="philosophy-item reveal reveal-delay-2">
+      <span class="philosophy-icon">✦</span>
+      <h3>Fully Customisable</h3>
+      <p>Every package is a starting point. We shape, refine, and personalise each detail until it feels entirely, beautifully yours.</p>
+    </div>
+    <div class="philosophy-divider reveal reveal-delay-3"></div>
+    <div class="philosophy-item reveal reveal-delay-4">
+      <span class="philosophy-icon">❧</span>
+      <h3>White-Glove Service</h3>
+      <p>From first consultation to final farewell, a dedicated planner remains by your side, ensuring nothing is ever less than perfect.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TAB NAVIGATION & PACKAGE SECTIONS -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="pkg-tabs-wrapper" id="packages">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-label">Our Collections</p>
+      <h2 class="section-title">Choose Your <em>Perfect Package</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+      <p class="section-desc">Browse our curated wedding collections — each thoughtfully assembled to meet a distinct vision, scale, and style of celebration.</p>
+    </div>
+    <div class="pkg-tabs-center reveal reveal-delay-2">
+      <div class="pkg-tabs" role="tablist">
+        <button class="pkg-tab active" onclick="switchTab('wedding')" role="tab">Wedding Planning</button>
+        <button class="pkg-tab" onclick="switchTab('destination')" role="tab">Destination</button>
+        <button class="pkg-tab" onclick="switchTab('decor')" role="tab">Décor & Styling</button>
+        <button class="pkg-tab" onclick="switchTab('photography')" role="tab">Photography</button>
+        <button class="pkg-tab" onclick="switchTab('catering')" role="tab">Catering</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MAIN PACKAGES CONTENT ─── -->
+<section class="main-packages">
+
+  <!-- ── WEDDING PLANNING ── -->
+  <div class="pkg-section active" id="tab-wedding">
+    <div class="section-inner">
+      <div class="pkg-overview reveal">
+        <div class="pkg-overview-img">
+          <span class="pkg-overview-img-icon">♛</span>
+          <span class="pkg-overview-img-script">Wedding Planning</span>
+          <!-- Decorative corner lines -->
+          <svg style="position:absolute;top:0;left:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M2 50 L2 2 L50 2" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+          <svg style="position:absolute;bottom:0;right:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M48 0 L48 48 L0 48" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="pkg-overview-content">
+          <p class="section-label">Wedding Planning</p>
+          <h2>Your Day, <em>Perfectly Orchestrated</em></h2>
+          <p>Our wedding planning packages cover every dimension of your celebration — from the first venue walkthrough to the last farewell dance. We manage vendors, timelines, budgets, and logistics so you can be fully present in the magic of your day.</p>
+          <p>Each package includes a dedicated senior planner who becomes your partner through the entire journey — understanding not just your checklist, but your heart.</p>
+          <div class="pkg-ideal">
+            <div class="pkg-ideal-label">Ideal For</div>
+            <p>Couples who want expert hands managing their entire wedding experience — from intimate ceremonies of 50 to grand celebrations of 2,000+ guests.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tiers-grid reveal">
+        <!-- Tier 1: Silver -->
+        <div class="tier-card reveal reveal-delay-1">
+          <p class="tier-name">Silver</p>
+          <p class="tier-subtitle">The Elegant Beginning</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹1.5L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Dedicated wedding coordinator</li>
+            <li>Venue sourcing & shortlisting</li>
+            <li>Vendor recommendations & booking</li>
+            <li>Budget planning & tracking</li>
+            <li>Day-of event management (up to 12 hrs)</li>
+            <li>Guest list management tool</li>
+            <li>Basic décor consultation</li>
+            <li class="excluded">Pre-wedding event coordination</li>
+            <li class="excluded">Custom theme design</li>
+            <li class="excluded">VIP concierge services</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <!-- Tier 2: Gold (Featured) -->
+        <div class="tier-card featured reveal reveal-delay-2">
+          <div class="tier-badge">Most Popular</div>
+          <p class="tier-name">Gold</p>
+          <p class="tier-subtitle">The Complete Experience</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹3.5L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Senior planner + dedicated assistant</li>
+            <li>Full venue scouting & negotiation</li>
+            <li>Complete vendor management</li>
+            <li>Detailed budget & spend analytics</li>
+            <li>Full-day management (unlimited hours)</li>
+            <li>Pre-wedding events (mehendi, sangeet)</li>
+            <li>Custom theme creation & mood board</li>
+            <li>Guest experience coordination</li>
+            <li>Hospitality & transport management</li>
+            <li class="excluded">Luxury concierge services</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <!-- Tier 3: Platinum -->
+        <div class="tier-card reveal reveal-delay-3">
+          <p class="tier-name">Platinum</p>
+          <p class="tier-subtitle">The Masterpiece Wedding</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹8L+</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Principal planner + full dedicated team</li>
+            <li>Destination & multi-venue coordination</li>
+            <li>Elite vendor curation & management</li>
+            <li>Real-time budget dashboard</li>
+            <li>Multi-day wedding management</li>
+            <li>All pre-wedding events</li>
+            <li>Bespoke luxury theme production</li>
+            <li>VIP guest & celebrity management</li>
+            <li>24/7 concierge & emergency support</li>
+            <li>Post-wedding follow-up & album</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DESTINATION WEDDINGS ── -->
+  <div class="pkg-section" id="tab-destination">
+    <div class="section-inner">
+      <div class="pkg-overview reveal">
+        <div class="pkg-overview-img">
+          <span class="pkg-overview-img-icon">✈</span>
+          <span class="pkg-overview-img-script">Destination</span>
+          <svg style="position:absolute;top:0;left:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M2 50 L2 2 L50 2" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+          <svg style="position:absolute;bottom:0;right:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M48 0 L48 48 L0 48" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="pkg-overview-content">
+          <p class="section-label">Destination Weddings</p>
+          <h2>The World as Your <em>Wedding Backdrop</em></h2>
+          <p>Kerala's backwaters, Rajasthan's palaces, Goa's shores, or international venues — wherever your heart calls, Lakshyah makes it happen. Our destination wedding packages handle every detail across distance and borders.</p>
+          <p>From travel and accommodation for your guests to local vendor coordination at your chosen destination, we ensure your dream setting becomes a seamless, breathtaking reality.</p>
+          <div class="pkg-ideal">
+            <div class="pkg-ideal-label">Ideal For</div>
+            <p>Couples who dream of an extraordinary setting — whether it's a heritage palace, a tropical beach, a mountain retreat, or an international venue.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tiers-grid reveal">
+        <div class="tier-card reveal reveal-delay-1">
+          <p class="tier-name">Journey</p>
+          <p class="tier-subtitle">Kerala Destinations</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹4L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Kerala venue sourcing & booking</li>
+            <li>Guest travel coordination (up to 50)</li>
+            <li>Local vendor management</li>
+            <li>Accommodation arrangement</li>
+            <li>Traditional Kerala décor</li>
+            <li>Day-of coordination team</li>
+            <li class="excluded">Outstation vendor sourcing</li>
+            <li class="excluded">International coordination</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card featured reveal reveal-delay-2">
+          <div class="tier-badge">Most Requested</div>
+          <p class="tier-name">Odyssey</p>
+          <p class="tier-subtitle">Pan-India Destinations</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹10L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Pan-India venue scouting & negotiation</li>
+            <li>Guest travel & logistics (up to 200)</li>
+            <li>Multi-city vendor management</li>
+            <li>Block accommodation booking</li>
+            <li>Location-authentic décor theme</li>
+            <li>Advance venue team visits</li>
+            <li>Guest transportation fleet</li>
+            <li>Multi-day event management</li>
+            <li class="excluded">International logistics</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card reveal reveal-delay-3">
+          <p class="tier-name">Horizon</p>
+          <p class="tier-subtitle">International Weddings</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹25L+</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>International venue curation</li>
+            <li>Full guest travel management</li>
+            <li>Destination legal & permit handling</li>
+            <li>Luxury resort block bookings</li>
+            <li>International vendor partnerships</li>
+            <li>Multiple advance site visits</li>
+            <li>Luxury guest experience design</li>
+            <li>24/7 international support team</li>
+            <li>Post-wedding celebration coordination</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DECOR ── -->
+  <div class="pkg-section" id="tab-decor">
+    <div class="section-inner">
+      <div class="pkg-overview reveal">
+        <div class="pkg-overview-img">
+          <span class="pkg-overview-img-icon">❧</span>
+          <span class="pkg-overview-img-script">Décor & Styling</span>
+          <svg style="position:absolute;top:0;left:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M2 50 L2 2 L50 2" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+          <svg style="position:absolute;bottom:0;right:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M48 0 L48 48 L0 48" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="pkg-overview-content">
+          <p class="section-label">Décor & Styling</p>
+          <h2>Spaces Transformed into <em>Living Dreams</em></h2>
+          <p>Our décor is never generic. Every petal, every drape, every light installation is chosen with singular intention — to create an atmosphere that feels like stepping into a world built only for you and your beloved.</p>
+          <p>From lush traditional Kerala mandap setups to contemporary floral installations and dramatic reception styling, our artisans craft beauty that takes your breath away.</p>
+          <div class="pkg-ideal">
+            <div class="pkg-ideal-label">Ideal For</div>
+            <p>Couples who believe that atmosphere is everything — and want their wedding to look like a dream brought to vivid, breathtaking life.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tiers-grid reveal">
+        <div class="tier-card reveal reveal-delay-1">
+          <p class="tier-name">Blossom</p>
+          <p class="tier-subtitle">Graceful Florals</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹1L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Mandap / stage decoration</li>
+            <li>Fresh floral centrepieces</li>
+            <li>Entrance & pathway décor</li>
+            <li>Basic lighting design</li>
+            <li>Table linen & setting</li>
+            <li>Welcome flower arrangements</li>
+            <li class="excluded">Full venue transformation</li>
+            <li class="excluded">Custom installations</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card featured reveal reveal-delay-2">
+          <div class="tier-badge">Bestseller</div>
+          <p class="tier-name">Bloom</p>
+          <p class="tier-subtitle">Signature Styling</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹3L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Full venue styling & transformation</li>
+            <li>Grand mandap with custom design</li>
+            <li>Premium floral installations</li>
+            <li>Atmospheric lighting & chandeliers</li>
+            <li>Bridal suite decoration</li>
+            <li>Car & entry path decoration</li>
+            <li>Custom colour palette execution</li>
+            <li>Sangeet & mehendi night décor</li>
+            <li class="excluded">Luxury installations & props</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card reveal reveal-delay-3">
+          <p class="tier-name">Opulence</p>
+          <p class="tier-subtitle">Luxury Production</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹7L+</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Bespoke luxury venue transformation</li>
+            <li>Architectural floral installations</li>
+            <li>Imported flower & exotic botanicals</li>
+            <li>Dramatic lighting & projection mapping</li>
+            <li>Custom-built props & structures</li>
+            <li>Luxury fabric drapery & canopy</li>
+            <li>Complete 3-day event décor</li>
+            <li>Dedicated styling team on-site</li>
+            <li>Post-event breakdown & clearance</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PHOTOGRAPHY ── -->
+  <div class="pkg-section" id="tab-photography">
+    <div class="section-inner">
+      <div class="pkg-overview reveal">
+        <div class="pkg-overview-img">
+          <span class="pkg-overview-img-icon">◎</span>
+          <span class="pkg-overview-img-script">Photography</span>
+          <svg style="position:absolute;top:0;left:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M2 50 L2 2 L50 2" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+          <svg style="position:absolute;bottom:0;right:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M48 0 L48 48 L0 48" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="pkg-overview-content">
+          <p class="section-label">Photography & Film</p>
+          <h2>Moments Preserved <em>in Exquisite Light</em></h2>
+          <p>Photography is not documentation — it is the preservation of feeling. Our network of curated photographers and cinematographers approach every wedding as a visual essay, seeking the authentic emotion in every glance, every tear, every burst of laughter.</p>
+          <p>We match you with the perfect creative eye for your vision — editorial fine art, warm documentary, or dramatic cinematic film — ensuring your memories feel timeless, not dated.</p>
+          <div class="pkg-ideal">
+            <div class="pkg-ideal-label">Ideal For</div>
+            <p>Couples who treasure authentic, beautifully captured memories that they will revisit and cherish for generations to come.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tiers-grid reveal">
+        <div class="tier-card reveal reveal-delay-1">
+          <p class="tier-name">Memories</p>
+          <p class="tier-subtitle">Essential Coverage</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹60K</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>1 professional photographer</li>
+            <li>8-hour full-day coverage</li>
+            <li>500+ edited photographs</li>
+            <li>Online digital gallery</li>
+            <li>Basic printed album</li>
+            <li>Candid & portrait photos</li>
+            <li class="excluded">Videography</li>
+            <li class="excluded">Drone coverage</li>
+            <li class="excluded">Pre-wedding shoot</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card featured reveal reveal-delay-2">
+          <div class="tier-badge">Most Loved</div>
+          <p class="tier-name">Story</p>
+          <p class="tier-subtitle">Complete Documentation</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹1.5L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>2 photographers + 1 videographer</li>
+            <li>Full wedding day coverage</li>
+            <li>1000+ edited photographs</li>
+            <li>Cinematic highlight film (5–8 min)</li>
+            <li>Drone aerial photography</li>
+            <li>Premium album design</li>
+            <li>Pre-wedding shoot session</li>
+            <li>Same-day edit teaser reel</li>
+            <li class="excluded">Feature-length film</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card reveal reveal-delay-3">
+          <p class="tier-name">Legacy</p>
+          <p class="tier-subtitle">The Full Cinematic Suite</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹3L</div>
+          <p class="tier-price-note">Starting From</p>
+          <ul class="tier-features">
+            <li>Full photography & cinema team</li>
+            <li>Multi-day wedding coverage</li>
+            <li>Unlimited edited photographs</li>
+            <li>Feature-length wedding film</li>
+            <li>Aerial cinematography & stills</li>
+            <li>Luxury hand-crafted album</li>
+            <li>Fine art prints (framed)</li>
+            <li>Pre-wedding & post-wedding sessions</li>
+            <li>Private online screening event</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CATERING ── -->
+  <div class="pkg-section" id="tab-catering">
+    <div class="section-inner">
+      <div class="pkg-overview reveal">
+        <div class="pkg-overview-img">
+          <span class="pkg-overview-img-icon">☽</span>
+          <span class="pkg-overview-img-script">Catering</span>
+          <svg style="position:absolute;top:0;left:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M2 50 L2 2 L50 2" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+          <svg style="position:absolute;bottom:0;right:0;opacity:0.15" width="50" height="50" viewBox="0 0 50 50"><path d="M48 0 L48 48 L0 48" stroke="#CD7F32" stroke-width="1" fill="none"/></svg>
+        </div>
+        <div class="pkg-overview-content">
+          <p class="section-label">Catering Coordination</p>
+          <h2>A Feast Worthy of <em>Your Celebration</em></h2>
+          <p>Food is the memory guests carry longest. Our catering packages span the full spectrum — from traditional Kerala sadya on banana leaves to multi-cuisine continental spreads and live culinary stations that become entertainment in themselves.</p>
+          <p>We coordinate with Kerala's finest caterers and ensure quality, presentation, timing, and hygiene meet the Lakshyah standard at every service.</p>
+          <div class="pkg-ideal">
+            <div class="pkg-ideal-label">Ideal For</div>
+            <p>Couples who want their guests to remember the food long after the evening ends — and who understand that great hospitality begins at the table.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tiers-grid reveal">
+        <div class="tier-card reveal reveal-delay-1">
+          <p class="tier-name">Feast</p>
+          <p class="tier-subtitle">Traditional Elegance</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹450<span style="font-size:1.2rem">/plate</span></div>
+          <p class="tier-price-note">Per Guest (Min. 200)</p>
+          <ul class="tier-features">
+            <li>Traditional Kerala sadya</li>
+            <li>Breakfast, lunch & dinner service</li>
+            <li>Vegetarian & non-veg options</li>
+            <li>Professional service staff</li>
+            <li>Banana leaf / crockery service</li>
+            <li>Basic dessert counter</li>
+            <li class="excluded">Live food stations</li>
+            <li class="excluded">International cuisine</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card featured reveal reveal-delay-2">
+          <div class="tier-badge">Most Popular</div>
+          <p class="tier-name">Grand Feast</p>
+          <p class="tier-subtitle">Curated Multi-Cuisine</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹850<span style="font-size:1.2rem">/plate</span></div>
+          <p class="tier-price-note">Per Guest (Min. 150)</p>
+          <ul class="tier-features">
+            <li>Kerala + North Indian + Continental</li>
+            <li>Welcome drinks & mocktails</li>
+            <li>Full-day catering service</li>
+            <li>2 live food stations</li>
+            <li>Premium dessert & ice cream bar</li>
+            <li>Dedicated service team</li>
+            <li>Customisable menu planning</li>
+            <li>Dietary restriction management</li>
+            <li class="excluded">Celebrity chef option</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+
+        <div class="tier-card reveal reveal-delay-3">
+          <p class="tier-name">Royal Banquet</p>
+          <p class="tier-subtitle">Luxury Culinary Experience</p>
+          <div class="tier-divider"></div>
+          <div class="tier-price">₹1800<span style="font-size:1.2rem">/plate</span></div>
+          <p class="tier-price-note">Per Guest (Min. 100)</p>
+          <ul class="tier-features">
+            <li>Full international cuisine spread</li>
+            <li>Signature cocktail & mocktail bar</li>
+            <li>Multi-day banquet service</li>
+            <li>5+ live gourmet stations</li>
+            <li>Luxury patisserie & dessert lounge</li>
+            <li>White-glove table service</li>
+            <li>Celebrity / guest chef option</li>
+            <li>Custom menu booklet for guests</li>
+            <li>Late-night food station</li>
+          </ul>
+          <a href="booking.html" class="tier-cta">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- GRAND WEDDING PACKAGES SHOWCASE -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="grand-package" id="grand">
+  <div class="grand-package-inner">
+    <div class="section-header reveal">
+      <p class="section-label">Complete Wedding Collections</p>
+      <h2 class="section-title">All-Inclusive <em>Grand Packages</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+      <p class="section-desc" style="max-width:580px;margin:1rem auto 0;font-size:.9rem;color:rgba(250,250,250,.5);font-weight:300;line-height:1.8;">Our all-inclusive bundles bring together planning, décor, catering, photography, and entertainment in one seamlessly managed, beautifully priced package.</p>
+    </div>
+
+    <div class="grand-tiers reveal">
+      <!-- Essential -->
+      <div class="grand-tier reveal reveal-delay-1">
+        <div class="grand-tier-label">Collection 01</div>
+        <h3>Essence</h3>
+        <div class="grand-tier-price">₹5L</div>
+        <p class="grand-tier-desc">An intimate, beautifully curated wedding for up to 200 guests. Every essential covered, nothing overlooked.</p>
+        <ul class="grand-features">
+          <li>Full wedding coordination</li>
+          <li>Mandap & venue décor</li>
+          <li>Catering (up to 200 guests)</li>
+          <li>Photography (1 photographer)</li>
+          <li>Basic entertainment & sound</li>
+          <li>Bridal car decoration</li>
+        </ul>
+        <a href="booking.html" class="grand-cta">Enquire About Essence</a>
+      </div>
+
+      <!-- Signature (featured) -->
+      <div class="grand-tier featured-grand reveal reveal-delay-2">
+        <div class="grand-featured-badge">Most Chosen</div>
+        <div class="grand-tier-label">Collection 02</div>
+        <h3>Signature</h3>
+        <div class="grand-tier-price">₹12L</div>
+        <p class="grand-tier-desc">The complete Lakshyah experience for 200–500 guests. Premium everything — from the first flower to the final frame.</p>
+        <ul class="grand-features">
+          <li>Senior planner + team</li>
+          <li>Full venue styling & florals</li>
+          <li>Multi-cuisine catering (500 guests)</li>
+          <li>2 photographers + videographer</li>
+          <li>Entertainment & live music</li>
+          <li>Pre-wedding events covered</li>
+          <li>Bridal beauty coordination</li>
+          <li>Guest accommodation support</li>
+        </ul>
+        <a href="booking.html" class="grand-cta">Enquire About Signature</a>
+      </div>
+
+      <!-- Legacy -->
+      <div class="grand-tier reveal reveal-delay-3">
+        <div class="grand-tier-label">Collection 03</div>
+        <h3>Legacy</h3>
+        <div class="grand-tier-price">₹25L+</div>
+        <p class="grand-tier-desc">A grand, multi-day wedding spectacle for 500+ guests — produced with the artistry and precision of a Lakshyah masterpiece.</p>
+        <ul class="grand-features">
+          <li>Principal planner + full team</li>
+          <li>Luxury multi-venue production</li>
+          <li>Gourmet multi-day banquet</li>
+          <li>Full photography & cinema crew</li>
+          <li>Complete entertainment suite</li>
+          <li>All pre & post-wedding events</li>
+          <li>Luxury bridal & groom suite</li>
+          <li>VIP guest concierge services</li>
+          <li>24/7 dedicated support</li>
+        </ul>
+        <a href="booking.html" class="grand-cta">Enquire About Legacy</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- COMPARISON TABLE -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="comparison-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-label">At a Glance</p>
+      <h2 class="section-title">Package <em>Comparison</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+    </div>
+    <div class="comparison-table-wrap reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:30%"><span class="col-name" style="font-family:'Jost',sans-serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--gray-mid)">Features</span></th>
+            <th><span class="col-name">Silver</span><span class="col-price">₹1.5L</span></th>
+            <th class="featured-col"><span class="col-name">Gold</span><span class="col-price">₹3.5L</span></th>
+            <th><span class="col-name">Platinum</span><span class="col-price">₹8L+</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cat-row"><td colspan="4">Planning & Coordination</td></tr>
+          <tr><td>Dedicated Planner</td><td><span class="check">✓</span></td><td class="featured-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Planning Team</td><td><span class="cross">—</span></td><td class="featured-col"><span class="partial">2 Members</span></td><td><span class="partial">Full Team</span></td></tr>
+          <tr><td>Budget Dashboard</td><td><span class="partial">Basic</span></td><td class="featured-col"><span class="partial">Advanced</span></td><td><span class="partial">Real-time</span></td></tr>
+          <tr><td>Vendor Management</td><td><span class="partial">3 vendors</span></td><td class="featured-col"><span class="partial">Unlimited</span></td><td><span class="partial">Elite curated</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">Events Covered</td></tr>
+          <tr><td>Main Wedding Day</td><td><span class="check">✓</span></td><td class="featured-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Engagement / Ring Ceremony</td><td><span class="cross">—</span></td><td class="featured-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Mehendi Night</td><td><span class="cross">—</span></td><td class="featured-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Sangeet / Reception</td><td><span class="cross">—</span></td><td class="featured-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Post-Wedding Events</td><td><span class="cross">—</span></td><td class="featured-col"><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">Guest Services</td></tr>
+          <tr><td>Guest Coordination</td><td><span class="partial">Basic list</span></td><td class="featured-col"><span class="partial">Full management</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Transport Arrangement</td><td><span class="cross">—</span></td><td class="featured-col"><span class="partial">On request</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>VIP Concierge</td><td><span class="cross">—</span></td><td class="featured-col"><span class="cross">—</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="cat-row"><td colspan="4">Support</td></tr>
+          <tr><td>Day-of Support Hours</td><td><span class="partial">12 hours</span></td><td class="featured-col"><span class="partial">Unlimited</span></td><td><span class="partial">24/7 multi-day</span></td></tr>
+          <tr><td>Emergency Support</td><td><span class="cross">—</span></td><td class="featured-col"><span class="partial">Business hours</span></td><td><span class="check">24/7</span></td></tr>
+          <tr><td>Post-Wedding Follow-up</td><td><span class="cross">—</span></td><td class="featured-col"><span class="partial">1 session</span></td><td><span class="check">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ADD-ONS -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="addons-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-label">Enhance Your Experience</p>
+      <h2 class="section-title">Premium <em>Add-Ons</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+      <p class="section-desc">Elevate any package with these bespoke additions — each designed to add a touch more magic to your celebration.</p>
+    </div>
+
+    <div class="addons-grid">
+      <div class="addon-card reveal reveal-delay-1">
+        <span class="addon-icon">🕊</span>
+        <div class="addon-name">Floral Grand Entrance</div>
+        <div class="addon-desc">An opulent floral tunnel or archway at the venue entrance — a moment your guests will photograph and remember forever.</div>
+        <div class="addon-price">₹40K+<small>One-time</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-2">
+        <span class="addon-icon">🎆</span>
+        <div class="addon-name">Fireworks Display</div>
+        <div class="addon-desc">A stunning aerial fireworks show or ground-level sparkler display timed perfectly to your most magical moments.</div>
+        <div class="addon-price">₹60K+<small>One-time (incl. permits)</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-3">
+        <span class="addon-icon">✦</span>
+        <div class="addon-name">Drone Light Show</div>
+        <div class="addon-desc">A mesmerising choreographed drone formation display in the night sky — the most cinematic wedding moment imaginable.</div>
+        <div class="addon-price">₹1.5L+<small>Per display</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-4">
+        <span class="addon-icon">🎵</span>
+        <div class="addon-name">Live Orchestra</div>
+        <div class="addon-desc">A professional Carnatic classical ensemble or a contemporary live band to set the perfect musical mood for your ceremony.</div>
+        <div class="addon-price">₹80K+<small>4-hour performance</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-1">
+        <span class="addon-icon">💄</span>
+        <div class="addon-name">Bridal Beauty Suite</div>
+        <div class="addon-desc">A dedicated luxury bridal suite with professional makeup artists, hairstylists, and mehendi artists for the bride and bridal party.</div>
+        <div class="addon-price">₹50K+<small>Full bridal party</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-2">
+        <span class="addon-icon">🚁</span>
+        <div class="addon-name">Helicopter Grand Entry</div>
+        <div class="addon-desc">Arrive in breathtaking style — a helicopter entry coordinated to perfection for the groom, creating an unforgettable first impression.</div>
+        <div class="addon-price">₹1.2L+<small>Coordination & charter</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-3">
+        <span class="addon-icon">🖼</span>
+        <div class="addon-name">Photo Wall & Booth</div>
+        <div class="addon-desc">A bespoke styled photo wall with props and a professional photo booth — a guest experience and keepsake rolled into one.</div>
+        <div class="addon-price">₹25K+<small>Full-day setup</small></div>
+      </div>
+      <div class="addon-card reveal reveal-delay-4">
+        <span class="addon-icon">🍰</span>
+        <div class="addon-name">Designer Wedding Cake</div>
+        <div class="addon-desc">A multi-tiered custom designer cake crafted by award-winning pastry artists — as beautiful to look at as it is to taste.</div>
+        <div class="addon-price">₹20K+<small>Customised design</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BOOKING PROCESS -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="process-section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">Your Journey <em>Begins Here</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+      <p class="section-desc">From your very first message to us, the Lakshyah experience has already begun. Here is how we bring your dream to life.</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="process-num">01</div>
+        <h3>Consultation</h3>
+        <p>Share your vision in a private consultation. We listen closely to understand your dream, your style, and your story.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="process-num">02</div>
+        <h3>Proposal</h3>
+        <p>We craft a bespoke package proposal tailored to your vision and budget — transparent, detailed, and fully explained.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="process-num">03</div>
+        <h3>Planning</h3>
+        <p>Your dedicated planner begins working immediately — curating vendors, visiting venues, and building your timeline.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="process-num">04</div>
+        <h3>Refinement</h3>
+        <p>Every detail is reviewed and refined through regular check-ins — ensuring everything aligns perfectly with your vision.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-5">
+        <div class="process-num">05</div>
+        <h3>Your Day</h3>
+        <p>Arrive and be present. We manage everything — so you can live fully in the most beautiful day of your life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- TESTIMONIALS -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="testi-strip">
+  <div class="testi-strip-inner">
+    <div class="section-header reveal">
+      <p class="section-label">Words from Our Couples</p>
+      <h2 class="section-title">Love Stories <em>Well Told</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+    </div>
+
+    <div class="testi-strip-grid">
+      <div class="testi-mini reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We chose the Gold package and it was the best decision we ever made. Our planner became family — she knew what we wanted before we even said it. The wedding was beyond anything we imagined.</p>
+        <div class="testi-author-name">Priya & Arjun Nair</div>
+        <div class="testi-author-pkg">Gold Wedding Package • Thrissur, 2024</div>
+      </div>
+      <div class="testi-mini reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Our destination wedding in Udaipur was a logistical miracle. Lakshyah coordinated 350 guests, 12 vendors, and a 3-day programme without a single hiccup. The décor left guests speechless.</p>
+        <div class="testi-author-name">Meera & Karthik Menon</div>
+        <div class="testi-author-pkg">Odyssey Destination Package • Udaipur, 2024</div>
+      </div>
+      <div class="testi-mini reveal reveal-delay-3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The Opulence décor package was absolutely worth every rupee. The floral archway, the chandelier mandap, the projection mapping — our reception looked like something from a magazine. Extraordinary.</p>
+        <div class="testi-author-name">Ananya & Rohan Pillai</div>
+        <div class="testi-author-pkg">Opulence Décor Package • Kochi, 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FAQ -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="faq-section">
+  <div class="faq-inner section-inner">
+    <div class="section-header reveal">
+      <p class="section-label">Common Questions</p>
+      <h2 class="section-title">Answers to Your <em>Questions</em></h2>
+      <div class="ornament-line"><span class="ornament-diamond">◆</span></div>
+    </div>
+
+    <div class="faq-items">
+
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <h3>Can I customise a package to add or remove specific services?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Absolutely. Every Lakshyah package is a starting point, not a rigid box. Once we understand your vision in our consultation, we can add, remove, or swap any element to create a package that fits your needs and budget exactly. We also offer standalone add-ons for couples who simply want one specific service enhanced.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <h3>How far in advance should I book a package?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We recommend booking at least 9 to 12 months in advance for peak wedding season dates (October to March in Kerala). For destination weddings, 12 to 18 months is ideal to secure the best venues and vendor availability. That said, we do accommodate shorter timelines — please reach out and we will advise on availability.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <h3>Are the prices listed inclusive of all taxes and fees?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The prices shown are base starting prices. Your final package cost will be detailed in your personalised proposal, which includes a complete breakdown of all services, applicable taxes (GST), and third-party vendor costs. We believe in complete transparency — no hidden fees, ever.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <h3>What is the payment schedule for booking a package?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Our standard payment schedule is: 25% booking deposit to confirm your date, 50% at 6 months prior to the wedding, and the remaining 25% two weeks before the event. We also offer flexible EMI-style payment plans for larger packages — which we can discuss during your consultation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <h3>Do you work with clients outside Kerala or internationally?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes — we regularly serve clients based outside Kerala and the country, managing everything remotely with regular video calls and digital collaboration tools. Our Destination and International packages are specifically designed for non-local clients, and we have coordinated weddings across India, the UAE, the UK, and Southeast Asia.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-5">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <h3>What happens if there is a last-minute change or emergency on the wedding day?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>This is exactly why you have a Lakshyah team. Our planners are trained to manage unexpected situations — from vendor no-shows to weather changes — with calm efficiency and pre-prepared contingencies. Platinum and Legacy package clients receive 24/7 emergency support. You will never face a crisis alone on your wedding day.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CTA BANNER -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="cta-banner">
+  <div class="cta-banner-pattern"></div>
+  <div class="cta-banner-content">
+    <!-- Decorative SVG -->
+    <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.04;pointer-events:none" width="600" height="600" viewBox="0 0 600 600">
+      <circle cx="300" cy="300" r="280" stroke="#C9A84C" stroke-width="1" fill="none"/>
+      <circle cx="300" cy="300" r="200" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+      <circle cx="300" cy="300" r="120" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+      <path d="M300 20 L300 580 M20 300 L580 300" stroke="#C9A84C" stroke-width="0.5"/>
+    </svg>
+    <p class="section-label" style="margin-bottom:0.5rem">Begin Your Story</p>
+    <span class="cta-banner-script bronze-text">Let's Create Magic</span>
+    <h2>Your Dream Wedding<br>is <em>One Conversation Away</em></h2>
+    <p>Every extraordinary wedding begins with a single, honest conversation about what matters most to you. Let us listen, and let us begin.</p>
+    <div class="cta-banner-btns">
+      <a href="booking.html" class="btn-primary">Book Free Consultation</a>
+      <a href="https://wa.me/919447000000" class="btn-outline">Talk to a Planner</a>
+    </div>
+    <p class="cta-banner-note">No commitment required · Completely personalised · Available 7 days a week</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-grid section-inner">
+    <div>
+      <span class="footer-brand-script">Lakshyah</span>
+      <p class="footer-tagline">Crafting timeless weddings with elegance, devotion, and an unwavering eye for beauty. Kerala's most trusted wedding planners.</p>
+      <div class="social-links">
+        <a class="social-link" href="#" aria-label="Instagram">in</a>
+        <a class="social-link" href="#" aria-label="Facebook">f</a>
+        <a class="social-link" href="#" aria-label="YouTube">▶</a>
+        <a class="social-link" href="#" aria-label="Pinterest">P</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Wedding Planning</a></li>
+        <li><a href="services.html">Destination Weddings</a></li>
+        <li><a href="services.html">Décor & Styling</a></li>
+        <li><a href="services.html">Photography</a></li>
+        <li><a href="services.html">Catering</a></li>
+        <li><a href="services.html">Entertainment</a></li>
+        <li><a href="services.html">Bridal Beauty</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item">
+        <span>📍</span>
+        <span>Nenmara, Palakkad District,<br>Kerala — 678508</span>
+      </div>
+      <div class="footer-contact-item">
+        <span>📞</span>
+        <span>+91 94470 00000</span>
+      </div>
+      <div class="footer-contact-item">
+        <span>✉</span>
+        <span>hello@lakshyahweddings.com</span>
+      </div>
+      <div class="footer-contact-item">
+        <span>🕐</span>
+        <span>Mon – Sat: 9am – 7pm</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom section-inner">
+    <p class="footer-copy">© 2025 Lakshyah Wedding Planners. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── NAVBAR SCROLL ───
+window.addEventListener('scroll', () => {
+  const navbar = document.getElementById('navbar');
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+    scrollBtn.classList.add('visible');
+  } else {
+    navbar.classList.remove('scrolled');
+    scrollBtn.classList.remove('visible');
+  }
+  triggerReveal();
+});
+
+// ─── REVEAL ON SCROLL ───
+function triggerReveal() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+      el.classList.add('visible');
+    }
+  });
+}
+setTimeout(triggerReveal, 200);
+window.addEventListener('load', triggerReveal);
+
+// ─── HAMBURGER ───
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const ham = document.getElementById('hamburger');
+  const isOpen = menu.classList.contains('open');
+  if (isOpen) { closeMobileMenu(); }
+  else {
+    menu.classList.add('open');
+    ham.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─── PACKAGE TABS ───
+function switchTab(tabId) {
+  // Update buttons
+  document.querySelectorAll('.pkg-tab').forEach(btn => btn.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+
+  // Update sections
+  document.querySelectorAll('.pkg-section').forEach(sec => sec.classList.remove('active'));
+  const section = document.getElementById('tab-' + tabId);
+  if (section) {
+    section.classList.add('active');
+    // Trigger reveals for newly visible section
+    setTimeout(triggerReveal, 100);
+  }
+}
+
+// ─── FAQ ACCORDION ───
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  // Open clicked (if wasn't already open)
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
